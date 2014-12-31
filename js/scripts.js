@@ -1,4 +1,4 @@
-var clientApp = angular.module('clientApp', ['ui.bootstrap', 'hljs', 'common']);
+var clientApp = angular.module('clientApp', ['ui.bootstrap', 'hljs', 'common', 'AuthInterceptor']);
 
 
 /**

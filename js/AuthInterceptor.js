@@ -39,7 +39,7 @@ requestInterceptor.factory('authInterceptor', function($log, $injector, ConfigSe
 					}
 				);
 			}
-			return config;
+			return config; //TODO this will be returned before the auth request returns. how to resolve this?
 		}
     };
     return requestInterceptor;

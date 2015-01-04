@@ -1,10 +1,12 @@
-var clientApp = angular.module('clientApp', ['ui.bootstrap', 'hljs', 'common', 'AuthInterceptor']);
+var clientApp = angular.module('clientApp', ['ui.bootstrap', 'hljs', 'common', 'AuthInterceptor', 'Mediator']);
 
 
 /**
  * Main application controller. Populates the form and submits the Service Request.
+ *
+ * TODO clean this up
  */
-clientApp.controller('ClientAppCtrl', function($scope, AuthService, clientAppHelper, utils, ProgressbarService, advancedSettings, SERVICES_CONFIG) {
+clientApp.controller('ClientAppCtrl', function($scope, clientAppHelper, utils, ProgressbarService, advancedSettings, SERVICES_CONFIG, ConfigService) {
 
 	//Populate the form.
 	$scope.service = advancedSettings;
@@ -21,34 +23,29 @@ clientApp.controller('ClientAppCtrl', function($scope, AuthService, clientAppHel
 		$scope.displayResponse = false;
 		$scope.processing = true;
 
-		//Update Progress Bar.
+		//Update Progress Bar. TODO this is now pointless since we use an interceptor. any alternative?
 		$scope.progress = ProgressbarService.getProgressState('START');
 
-		//Retrieve an Authorisation Token based on the selected environment.
-		//TODO Consider using an interceptor for authentication and handling the callService success/failure here. 
-		var authEndpoint = clientAppHelper.configureServiceUrl($scope.environmentSelected, "auth");
-		AuthService.getAuthCookie(authEndpoint).then(
-			function(success) {
-				$scope.authenticationToken = success.authorization;
+		//Pass the (user-configurable) settings needed by the Authentication Service to the Mediator.
+		var authSettings = {
+			'env' : $scope.environmentSelected,
+			'ApplicationId': advancedSettings.appId,
+			'x-dnb-user': advancedSettings.userId,
+			'x-dnb-pwd': advancedSettings.password
+		};
+		ConfigService.setData(authSettings);
 
-				//Determine the configured service endpoint.
-				if (advancedSettings.requestUrl) {
-					//If the user has entered a specific endpoint, just use that.
-					$scope.requestUrl = advancedSettings.requestUrl;
-				} else {
-					$scope.requestUrl = clientAppHelper.configureServiceUrl($scope.environmentSelected, $scope.serviceSelected, $scope.duns);
-				}
+		//Determine the configured service endpoint.
+		if (advancedSettings.requestUrl) {
+			//If the user has entered a specific endpoint, just use that.
+			$scope.requestUrl = advancedSettings.requestUrl;
+		} else {
+			$scope.requestUrl = clientAppHelper.configureServiceUrl($scope.environmentSelected, $scope.serviceSelected, $scope.duns);
+		}
 
-				//Call the endpoint.
-				$scope.progress = ProgressbarService.getProgressState('IN_PROGRESS');
-				clientAppHelper.callService($scope);
-			},
-			function(error) {
-				var errorMessage = "An error occurred while authenticating... " + error.msg + ". Error Code: " + error.code;
-				$scope.alerts.push({type: 'danger', msg: errorMessage});
-				$scope.processing = false;
-			}
-		);
+		//Call the endpoint.
+		$scope.progress = ProgressbarService.getProgressState('IN_PROGRESS');
+		clientAppHelper.callService($scope);
 	}
 
 	//Remove the selected alert/error.
@@ -60,39 +57,6 @@ clientApp.controller('ClientAppCtrl', function($scope, AuthService, clientAppHel
 	$scope.copy = function(text) {
 		$scope.copyMessage = "Successfully copied to the Clipboard.";
 		utils.copyToClipboard(text);
-	};
-});
-
-
-/**
- * Retrieves an Authentication Token for a specified environment.
- */
-clientApp.service('AuthService', function($http, $q, advancedSettings) {
-	var cachedAuthTokens = [];
-
-	this.getAuthCookie = function(authEndpoint) {
-		var deferred = $q.defer();
-
-		if (typeof cachedAuthTokens[authEndpoint] !== 'undefined') {
-			deferred.resolve({authorization: cachedAuthTokens[authEndpoint]});
-		} else {
-			var AUTHENTICATION_REQUEST_CONFIG = { headers: {
-				'ApplicationId': advancedSettings.appId,
-				'x-dnb-user': advancedSettings.userId,
-				'x-dnb-pwd': advancedSettings.password
-			}};
-
-			$http.get(authEndpoint, AUTHENTICATION_REQUEST_CONFIG).
-				success(function(data, status, headers, config) {
-					cachedAuthTokens[authEndpoint] = headers('authorization');
-					deferred.resolve({authorization: headers('authorization')});
-				}).
-				error(function(msg, code) {
-					deferred.reject({msg: msg, code: code});
-				}
-			);
-		}
-		return deferred.promise;
 	};
 });
 
@@ -144,9 +108,9 @@ clientApp.service('clientAppHelper', function($http, $location, $anchorScroll, u
 	 */
 	helper.callService = function($scope) {
 		var requestConfig = { headers: {
-			'Authorization': $scope.authenticationToken,
 			'ApplicationId': advancedSettings.appId
 		}};
+		requestConfig.authenticate = true;
 
 		//Determine if this should be a GET or POST request.
 		var promise;
@@ -169,13 +133,25 @@ clientApp.service('clientAppHelper', function($http, $location, $anchorScroll, u
 
 	/**
 	 * Update the UI with the data received from the service.
+	 *
+	 * TODO need to revisit this entire function.
 	 */
 	helper.populateView = function($scope, response) {
 		$scope.progress = ProgressbarService.getProgressState('COMPLETE');
-		response.headers().status = response.status;
-		$scope.responseBody = JSON.stringify(response.data, null, 2);
-		$scope.responseHeaders = JSON.stringify(response.headers(), null, 2);
-		$scope.requestHeaders = JSON.stringify(response.config, null, 2);
+
+		if (response.data) {
+			$scope.responseBody = JSON.stringify(response.data, null, 2);
+			response.headers().status = response.status;
+			$scope.responseHeaders = JSON.stringify(response.headers(), null, 2);
+			$scope.requestHeaders = JSON.stringify(response.config, null, 2);
+			//$scope.authenticationToken = response.config.headers.Authorization;
+		} else {
+			//An error occurred.
+			$scope.alerts.push({type: 'danger', msg: 'An error occurred.'});
+			$scope.responseBody = response.message;
+			$scope.responseHeaders = "";
+			$scope.requestHeaders = JSON.stringify(response, null, 2);
+		}
 	};
 
 	/**
@@ -195,7 +171,7 @@ clientApp.service('clientAppHelper', function($http, $location, $anchorScroll, u
 
 
 /**
- * Service for managing the progress bar. 
+ * Service for managing the progress bar.
  */
 clientApp.service('ProgressbarService', function() {
 	var PROGRESS_STATES = {

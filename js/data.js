@@ -41,11 +41,11 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		env : "qa",
 		service : "auth",
 		url : "http://services-ext-qa.dnb.com/rest/Authentication"
-	}, { 
+	}, {
 		env : "stg",
 		service : "auth",
 		url : "http://services-ext-stg.dnb.com/rest/Authentication"
-	}, { 
+	}, {
 		env : "qa",
 		service : "pcs",
 		url : "http://services-ext-qa.dnb.com/rest/ProductCatalogService/V2/ListAvailableProduct?DUNSNumber={duns}"
@@ -117,7 +117,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 
 
 /**
- * The default advanced settings to use. 
+ * The default advanced settings to use.
  */
 angular.module('clientApp').value('advancedSettings', {
 	requestUrl : "",

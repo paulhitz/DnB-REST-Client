@@ -20,10 +20,10 @@ clientApp.service('clientAppHelper', function($http, utils, ProgressbarService, 
 			}
 		}
 
-		//Remove dashes from the optional parameter and add it to the URL.
+		//Remove dashes from the optional parameter, encode it and add it to the URL.
 		var placeholder = SERVICES_CONFIG.placeholder;
 		if (parameter) {
-			placeholder = utils.replaceAll(parameter, "-", "");
+			placeholder = encodeURIComponent(utils.replaceAll(parameter, "-", ""));
 		}
 		if (url) {
 			url = url.replace("{placeholder}", placeholder);

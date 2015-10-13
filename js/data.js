@@ -65,15 +65,20 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		description : "This service provides a convenient way to retrieve the list of available assets stored using the Portfolio Service.",
 		group : "Portfolio"
 	}, {
-		id : "director_search",
-		label : "Officer Search (by Last Name)",
+		id : "ch_director_search",
+		label : "Director Search (v1.0)",
 		description : "This service uses Companies House data. This particular operation searches for directors/officers. The last name (e.g. 'Smith') should be provided as a parameter.",
-		group : "Director Search (v1.0)"
+		group : "Companies House"
 	}, {
-		id : "director_order",
-		label : "Officer Details",
+		id : "ch_director_order",
+		label : "Officer Details (v1.0)",
 		description : "This service uses Companies House data. This particular operation provides more details about a specified officer/director. An 'Officer ID' should be passed as a parameter. The content of this parameter should be URL-encoded.",
-		group : "Director Search (v1.0)"
+		group : "Companies House"
+	}, {
+		id : "ch_filing_history",
+		label : "Filing History (v2.0)",
+		description : "This service uses Companies House data. This particular operation returns the Filing History (i.e. documents filed at Companies House) for the specified organization. An 'Organization ID' (e.g. 05798215) should be passed as a parameter.",
+		group : "Companies House"
 	}, {
 		id : "rdc_search",
 		label : "RDC Search",
@@ -416,28 +421,40 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		url : "https://maxcvservices.dnb.com/rest/PortfolioService/V2/ListPortfolioAsset"
 	}, {
 		env : "qa",
-		service : "director_search",
+		service : "ch_director_search",
 		url : "http://services-ext-qa.dnb.com/v1.0/companyhouse/officers?officerType=CUR&officerLastName={placeholder}"
 	}, {
 		env : "stg",
-		service : "director_search",
+		service : "ch_director_search",
 		url : "http://services-ext-stg.dnb.com/v1.0/companyhouse/officers?officerType=CUR&officerLastName={placeholder}"
 	}, {
 		env : "prod",
-		service : "director_search",
+		service : "ch_director_search",
 		url : "https://maxcvservices.dnb.com/v1.0/companyhouse/officers?officerType=CUR&officerLastName={placeholder}"
 	}, {
 		env : "qa",
-		service : "director_order",
+		service : "ch_director_order",
 		url : "http://services-ext-qa.dnb.com/v1.0/companyhouse/officers/{placeholder}"
 	}, {
 		env : "stg",
-		service : "director_order",
+		service : "ch_director_order",
 		url : "http://services-ext-stg.dnb.com/v1.0/companyhouse/officers/{placeholder}"
 	}, {
 		env : "prod",
-		service : "director_order",
+		service : "ch_director_order",
 		url : "https://maxcvservices.dnb.com/v1.0/companyhouse/officers/{placeholder}"
+	}, {
+		env : "qa",
+		service : "ch_filing_history",
+		url : "http://services-ext-qa.dnb.com/v2.0/companyhouse/filinghistory?organizationIdentificationNumber={placeholder}&organizationIdentificationNumberType=00"
+	}, {
+		env : "stg",
+		service : "ch_filing_history",
+		url : "http://services-ext-stg.dnb.com/v2.0/companyhouse/filinghistory?organizationIdentificationNumber={placeholder}&organizationIdentificationNumberType=00"
+	}, {
+		env : "prod",
+		service : "ch_filing_history",
+		url : "https://maxcvservices.dnb.com/v2.0/companyhouse/filinghistory?organizationIdentificationNumber={placeholder}&organizationIdentificationNumberType=00"
 	}, {
 		env : "qa",
 		service : "investigation",

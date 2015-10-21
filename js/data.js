@@ -160,6 +160,16 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		description : "The GMS service has limited documentation. The GMS endpoints configured in this tool are specific to the Onboard application.",
 		group : "GMS Monitoring (Onboard Specific)"
 	}, {
+		id : "img_pkg_avail",
+		label : "Package Availability",
+		description : "This operation returns a list of available packages and details about each package (type, size etc.). Requires an organization ID (for example: FC004460-00).",
+		group : "Image Packages (v2.2)"
+	}, {
+		id : "img_pkg_doc_search",
+		label : "Document Search",
+		description : "This operation returns a list of available packages and details about each package (type, size etc.). The list is filtered by document type. This operation requires an organization ID (for example: FC004460-00). A document type of 'ACC' is hard-coded.",
+		group : "Image Packages (v2.2)"
+	}, {
 		id : "investigation",
 		label : "Investigation Service (POST)",
 		description : "A service for requesting investigations in order to obtain the most recent information on a business. Successful investigations result in the creation or revision of a Business Information Report (BIR).",
@@ -215,6 +225,30 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		env : "prod",
 		service : "pcs",
 		url : "https://maxcvservices.dnb.com/rest/ProductCatalogService/V2/ListAvailableProduct?DUNSNumber={placeholder}"
+	}, {
+		env : "qa",
+		service : "img_pkg_avail",
+		url : "http://services-ext-qa.dnb.com/V2.2/organizations/organizationid-FC004460-00/publicdocuments?CountryISOAlpha2Code=GB"
+	}, {
+		env : "stg",
+		service : "img_pkg_avail",
+		url : "http://services-ext-stg.dnb.com/V2.2/organizations/organizationid-{placeholder}/publicdocuments?CountryISOAlpha2Code=GB"
+	}, {
+		env : "prod",
+		service : "img_pkg_avail",
+		url : "https://maxcvservices.dnb.com/V2.2/organizations/organizationid-{placeholder}/publicdocuments?CountryISOAlpha2Code=GB"
+	}, {
+		env : "qa",
+		service : "img_pkg_doc_search",
+		url : "http://services-ext-qa.dnb.com/V2.2/organizations/organizationid-FC004460-00/publicdocuments?CountryISOAlpha2Code=GB&DocumentCategory=ACC"
+	}, {
+		env : "stg",
+		service : "img_pkg_doc_search",
+		url : "http://services-ext-stg.dnb.com/V2.2/organizations/organizationid-{placeholder}/publicdocuments?CountryISOAlpha2Code=GB&DocumentCategory=ACC"
+	}, {
+		env : "prod",
+		service : "img_pkg_doc_search",
+		url : "https://maxcvservices.dnb.com/V2.2/organizations/organizationid-{placeholder}/publicdocuments?CountryISOAlpha2Code=GB&DocumentCategory=ACC"
 	}, {
 		env : "qa",
 		service : "pcs_public_docs",

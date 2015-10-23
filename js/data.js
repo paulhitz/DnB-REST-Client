@@ -161,14 +161,14 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		group : "GMS Monitoring (Onboard Specific)"
 	}, {
 		id : "img_pkg_avail",
-		label : "Package Availability",
-		description : "This operation returns a list of available packages and details about each package (type, size etc.). Requires an organization ID (for example: FC004460-00).",
-		group : "Image Packages (v2.2)"
+		label : "Available Image List",
+		description : "This operation returns a list of available packages and details about each package (type, size etc.). Requires an organization ID (for example: FC004460).",
+		group : "Image Packages (Work-in-Progress)"
 	}, {
 		id : "img_pkg_doc_search",
-		label : "Document Search",
-		description : "This operation returns a list of available packages and details about each package (type, size etc.). The list is filtered by document type. This operation requires an organization ID (for example: FC004460-00). A document type of 'ACC' is hard-coded.",
-		group : "Image Packages (v2.2)"
+		label : "Available Image List - Filter by Document Category",
+		description : "This operation returns a list of available packages and details about each package (type, size etc.). The list is filtered by document type. This operation requires an organization ID (for example: FC004460). A document type of 'ACC' is hard-coded.",
+		group : "Image Packages (Work-in-Progress)"
 	}, {
 		id : "investigation",
 		label : "Investigation Service (POST)",
@@ -228,27 +228,27 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "img_pkg_avail",
-		url : "http://services-ext-qa.dnb.com/V2.2/organizations/organizationid-FC004460-00/publicdocuments?CountryISOAlpha2Code=GB"
+		url : "http://services-ext-qa.dnb.com/V2.2/organizations/organizationid-{placeholder}-00/publicdocuments?CountryISOAlpha2Code=GB"
 	}, {
 		env : "stg",
 		service : "img_pkg_avail",
-		url : "http://services-ext-stg.dnb.com/V2.2/organizations/organizationid-{placeholder}/publicdocuments?CountryISOAlpha2Code=GB"
+		url : "http://services-ext-stg.dnb.com/V2.2/organizations/organizationid-{placeholder}-00/publicdocuments?CountryISOAlpha2Code=GB"
 	}, {
 		env : "prod",
 		service : "img_pkg_avail",
-		url : "https://maxcvservices.dnb.com/V2.2/organizations/organizationid-{placeholder}/publicdocuments?CountryISOAlpha2Code=GB"
+		url : "https://maxcvservices.dnb.com/V2.2/organizations/organizationid-{placeholder}-00/publicdocuments?CountryISOAlpha2Code=GB"
 	}, {
 		env : "qa",
 		service : "img_pkg_doc_search",
-		url : "http://services-ext-qa.dnb.com/V2.2/organizations/organizationid-FC004460-00/publicdocuments?CountryISOAlpha2Code=GB&DocumentCategory=ACC"
+		url : "http://services-ext-qa.dnb.com/V2.2/organizations/organizationid-{placeholder}-00/publicdocuments?CountryISOAlpha2Code=GB&DocumentCategory=ACC"
 	}, {
 		env : "stg",
 		service : "img_pkg_doc_search",
-		url : "http://services-ext-stg.dnb.com/V2.2/organizations/organizationid-{placeholder}/publicdocuments?CountryISOAlpha2Code=GB&DocumentCategory=ACC"
+		url : "http://services-ext-stg.dnb.com/V2.2/organizations/organizationid-{placeholder}-00/publicdocuments?CountryISOAlpha2Code=GB&DocumentCategory=ACC"
 	}, {
 		env : "prod",
 		service : "img_pkg_doc_search",
-		url : "https://maxcvservices.dnb.com/V2.2/organizations/organizationid-{placeholder}/publicdocuments?CountryISOAlpha2Code=GB&DocumentCategory=ACC"
+		url : "https://maxcvservices.dnb.com/V2.2/organizations/organizationid-{placeholder}-00/publicdocuments?CountryISOAlpha2Code=GB&DocumentCategory=ACC"
 	}, {
 		env : "qa",
 		service : "pcs_public_docs",

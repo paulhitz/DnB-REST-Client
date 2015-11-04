@@ -65,15 +65,45 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		description : "This service provides a convenient way to retrieve the list of available assets stored using the Portfolio Service.",
 		group : "Portfolio"
 	}, {
-		id : "director_search",
-		label : "Officer Search (by Last Name)",
+		id : "ch_director_search",
+		label : "Director Search (v1.0)",
 		description : "This service uses Companies House data. This particular operation searches for directors/officers. The last name (e.g. 'Smith') should be provided as a parameter.",
-		group : "Director Search (v1.0)"
+		group : "Companies House"
 	}, {
-		id : "director_order",
-		label : "Officer Details",
+		id : "ch_director_order",
+		label : "Officer Details (v1.0)",
 		description : "This service uses Companies House data. This particular operation provides more details about a specified officer/director. An 'Officer ID' should be passed as a parameter. The content of this parameter should be URL-encoded.",
-		group : "Director Search (v1.0)"
+		group : "Companies House"
+	}, {
+		id : "ch_filing_history",
+		label : "Filing History (v2.0)",
+		description : "This service uses Companies House data. This particular operation returns the Filing History (i.e. documents filed at Companies House) for the specified organization. A Registration Number (e.g. 05798215) should be passed as a parameter.",
+		group : "Companies House"
+	}, {
+		id : "order_company_doc",
+		label : "Report Product Service - Order Company Public Document",
+		description : "This service is used to order BASE64-encoded PDF company documents. It can be used with Available Image List. This particular request is hard-coded to a specific company document. Based on DUNS number.",
+		group : "Image Bank"
+	}, {
+		id : "pcs_public_docs",
+		label : "Product Catalog Service - Available Image List",
+		description : "This service enables the identification of all available company documents that have been filed for a specified UK company. Based on DUNS number.",
+		group : "Image Bank"
+	}, {
+		id : "img_pkg_image_list",
+		label : "Public Document - Available Image List",
+		description : "This operation returns a list of available packages and details about each package (type, size etc.). Requires a Registration Number (for example: FC004460).",
+		group : "Image Bank"
+	}, {
+		id : "img_pkg_image_list_filter",
+		label : "Public Document - Filter Available Image List",
+		description : "This operation returns a filtered list of available packages. The list is filtered by document type. This operation requires a Registration Number (for example: FC004460). A document type of 'ACC' is hard-coded.",
+		group : "Image Bank"
+	}, {
+		id : "img_pkg_download",
+		label : "Public Document - Download Image Package",
+		description : "Download an image package for the specified Registration Number (for example: FC004460). The Image Package is a Base-64 encoded PDF. Cover page information and the document package type are hard-coded.",
+		group : "Image Bank"
 	}, {
 		id : "rdc_search",
 		label : "RDC Search",
@@ -160,16 +190,6 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		description : "A service for requesting investigations in order to obtain the most recent information on a business. Successful investigations result in the creation or revision of a Business Information Report (BIR).",
 		group : "Miscellaneous"
 	}, {
-		id : "pcs_public_docs",
-		label : "Product Catalog Service - Available Image List",
-		description : "This service enables the identification of all available company documents that have been filed for a specified UK DUNS#.",
-		group : "Miscellaneous"
-	}, {
-		id : "order_company_doc",
-		label : "Report Product Service - Order Company Public Document",
-		description : "This service is used to order BASE64-encoded PDF company documents. It can be used with Available Image List. This particular request is hard-coded to a specific company document.",
-		group : "Miscellaneous"
-	}, {
 		id : "date_test",
 		label : "JSONTest.com Date/Time",
 		description : "JSONTest.com is a testing platform for REST services.",
@@ -210,6 +230,42 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		env : "prod",
 		service : "pcs",
 		url : "https://maxcvservices.dnb.com/rest/ProductCatalogService/V2/ListAvailableProduct?DUNSNumber={placeholder}"
+	}, {
+		env : "qa",
+		service : "img_pkg_image_list",
+		url : "http://services-ext-qa.dnb.com/V2.2/organizations/organizationid-{placeholder}-00/publicdocuments?CountryISOAlpha2Code=GB"
+	}, {
+		env : "stg",
+		service : "img_pkg_image_list",
+		url : "http://services-ext-stg.dnb.com/V2.2/organizations/organizationid-{placeholder}-00/publicdocuments?CountryISOAlpha2Code=GB"
+	}, {
+		env : "prod",
+		service : "img_pkg_image_list",
+		url : "https://maxcvservices.dnb.com/V2.2/organizations/organizationid-{placeholder}-00/publicdocuments?CountryISOAlpha2Code=GB"
+	}, {
+		env : "qa",
+		service : "img_pkg_image_list_filter",
+		url : "http://services-ext-qa.dnb.com/V2.2/organizations/organizationid-{placeholder}-00/publicdocuments?CountryISOAlpha2Code=GB&DocumentCategory=ACC"
+	}, {
+		env : "stg",
+		service : "img_pkg_image_list_filter",
+		url : "http://services-ext-stg.dnb.com/V2.2/organizations/organizationid-{placeholder}-00/publicdocuments?CountryISOAlpha2Code=GB&DocumentCategory=ACC"
+	}, {
+		env : "prod",
+		service : "img_pkg_image_list_filter",
+		url : "https://maxcvservices.dnb.com/V2.2/organizations/organizationid-{placeholder}-00/publicdocuments?CountryISOAlpha2Code=GB&DocumentCategory=ACC"
+	}, {
+		env : "qa",
+		service : "img_pkg_download",
+		url : "http://services-ext-qa.dnb.com/V3.1/organizations/organizationid-{placeholder}-00/products/publicdocument?CountryISOAlpha2Code=GB&DocumentPackageName=CRI&DocumentFilingHistoryRequiredIndicator=true&COVERPAGEDUNS=210279774&COVERPAGEORGANIZATIONNAME=Paul&CoverPageStreetAddressLine-1=15-17%20King%20Street%2C&CoverPageStreetAddressLine-2=London%2C&CoverPageStreetAddressLine-3=EC2V%208EA&CoverPageStreetAddressLine-4=GB&COVERPAGEUSERNAME=Mr%20Dan%20David&COVERPAGECUSTOMERREFERENCETEXT=12345"
+	}, {
+		env : "stg",
+		service : "img_pkg_download",
+		url : "http://services-ext-stg.dnb.com/V3.1/organizations/organizationid-{placeholder}-00/products/publicdocument?CountryISOAlpha2Code=GB&DocumentPackageName=CRI&DocumentFilingHistoryRequiredIndicator=true&COVERPAGEDUNS=210279774&COVERPAGEORGANIZATIONNAME=Paul&CoverPageStreetAddressLine-1=15-17%20King%20Street%2C&CoverPageStreetAddressLine-2=London%2C&CoverPageStreetAddressLine-3=EC2V%208EA&CoverPageStreetAddressLine-4=GB&COVERPAGEUSERNAME=Mr%20Dan%20David&COVERPAGECUSTOMERREFERENCETEXT=12345"
+	}, {
+		env : "prod",
+		service : "img_pkg_download",
+		url : "https://maxcvservices.dnb.com/V3.1/organizations/organizationid-{placeholder}-00/products/publicdocument?CountryISOAlpha2Code=GB&DocumentPackageName=CRI&DocumentFilingHistoryRequiredIndicator=true&COVERPAGEDUNS=210279774&COVERPAGEORGANIZATIONNAME=Paul&CoverPageStreetAddressLine-1=15-17%20King%20Street%2C&CoverPageStreetAddressLine-2=London%2C&CoverPageStreetAddressLine-3=EC2V%208EA&CoverPageStreetAddressLine-4=GB&COVERPAGEUSERNAME=Mr%20Dan%20David&COVERPAGECUSTOMERREFERENCETEXT=12345"
 	}, {
 		env : "qa",
 		service : "pcs_public_docs",
@@ -261,27 +317,27 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "gbo",
-		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/GBO?ArchiveProductOptOutIndicator=true"
+		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/GBO?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "gbo",
-		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/GBO?ArchiveProductOptOutIndicator=true"
+		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/GBO?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "gbo",
-		url : "https://maxcvservices.dnb.com/V2/organizations/{placeholder}/products/GBO?ArchiveProductOptOutIndicator=true&ApplicationTransactionID=onboard"
+		url : "https://maxcvservices.dnb.com/V2/organizations/{placeholder}/products/GBO?ArchiveProductOptOutIndicator=true&ApplicationTransactionID=onboard&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "so",
-		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/SMPL_OWNSHP?ArchiveProductOptOutIndicator=true"
+		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/SMPL_OWNSHP?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "so",
-		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/SMPL_OWNSHP?ArchiveProductOptOutIndicator=true"
+		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/SMPL_OWNSHP?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "so",
-		url : "https://maxcvservices.dnb.com/V2/organizations/{placeholder}/products/SMPL_OWNSHP?ArchiveProductOptOutIndicator=true&ApplicationTransactionID=onboard"
+		url : "https://maxcvservices.dnb.com/V2/organizations/{placeholder}/products/SMPL_OWNSHP?ArchiveProductOptOutIndicator=true&ApplicationTransactionID=onboard&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "kyc",
@@ -416,28 +472,40 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		url : "https://maxcvservices.dnb.com/rest/PortfolioService/V2/ListPortfolioAsset"
 	}, {
 		env : "qa",
-		service : "director_search",
+		service : "ch_director_search",
 		url : "http://services-ext-qa.dnb.com/v1.0/companyhouse/officers?officerType=CUR&officerLastName={placeholder}"
 	}, {
 		env : "stg",
-		service : "director_search",
+		service : "ch_director_search",
 		url : "http://services-ext-stg.dnb.com/v1.0/companyhouse/officers?officerType=CUR&officerLastName={placeholder}"
 	}, {
 		env : "prod",
-		service : "director_search",
+		service : "ch_director_search",
 		url : "https://maxcvservices.dnb.com/v1.0/companyhouse/officers?officerType=CUR&officerLastName={placeholder}"
 	}, {
 		env : "qa",
-		service : "director_order",
+		service : "ch_director_order",
 		url : "http://services-ext-qa.dnb.com/v1.0/companyhouse/officers/{placeholder}"
 	}, {
 		env : "stg",
-		service : "director_order",
+		service : "ch_director_order",
 		url : "http://services-ext-stg.dnb.com/v1.0/companyhouse/officers/{placeholder}"
 	}, {
 		env : "prod",
-		service : "director_order",
+		service : "ch_director_order",
 		url : "https://maxcvservices.dnb.com/v1.0/companyhouse/officers/{placeholder}"
+	}, {
+		env : "qa",
+		service : "ch_filing_history",
+		url : "http://services-ext-qa.dnb.com/v2.0/companyhouse/filinghistory?organizationIdentificationNumber={placeholder}&CapitalDocumentRequiredIndicator=true"
+	}, {
+		env : "stg",
+		service : "ch_filing_history",
+		url : "http://services-ext-stg.dnb.com/v2.0/companyhouse/filinghistory?organizationIdentificationNumber={placeholder}&CapitalDocumentRequiredIndicator=true"
+	}, {
+		env : "prod",
+		service : "ch_filing_history",
+		url : "https://maxcvservices.dnb.com/v2.0/companyhouse/filinghistory?organizationIdentificationNumber={placeholder}&CapitalDocumentRequiredIndicator=true"
 	}, {
 		env : "qa",
 		service : "investigation",

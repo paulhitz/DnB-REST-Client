@@ -20,15 +20,28 @@ clientApp.service('clientAppHelper', function($http, utils, ProgressbarService, 
 			}
 		}
 
-		//Remove dashes from the optional parameter, encode it and add it to the URL.
+		//Clean up the parameter and add it to the URL.
 		var placeholder = SERVICES_CONFIG.placeholder;
 		if (parameter) {
-			placeholder = encodeURIComponent(utils.replaceAll(parameter, "-", ""));
+			placeholder = helper.sanitiseParameter(parameter);
 		}
 		if (url) {
 			url = url.replace("{placeholder}", placeholder);
 		}
 		return url;
+	};
+
+	/**
+	 * Prepare the parameter for passing to the service.
+	 */
+	helper.sanitiseParameter = function(parameter) {
+		//Remove the dashes if it's a DUNS number.
+		if (parameter.length === GENERAL_CONSTANTS.FORMATTED_DUNS_LENGTH && parameter.indexOf('-') !== -1) {
+			parameter = utils.replaceAll(parameter, "-", "")
+		}
+
+		//Return the encoded parameter.
+		return encodeURIComponent(parameter);
 	};
 
 	/**

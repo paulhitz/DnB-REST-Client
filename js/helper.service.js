@@ -37,7 +37,7 @@ clientApp.service('clientAppHelper', function($http, utils, ProgressbarService, 
 	helper.sanitiseParameter = function(parameter) {
 		//Remove the dashes if it's a DUNS number.
 		if (parameter.length === GENERAL_CONSTANTS.FORMATTED_DUNS_LENGTH && parameter.indexOf('-') !== -1) {
-			parameter = utils.replaceAll(parameter, "-", "")
+			parameter = utils.replaceAll(parameter, "-", "");
 		}
 
 		//Return the encoded parameter.

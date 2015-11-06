@@ -90,6 +90,11 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		description : "This service enables the identification of all available company documents that have been filed for a specified UK company. Based on DUNS number.",
 		group : "Image Bank"
 	}, {
+		id : "pcs_public_docs_filter",
+		label : "Product Catalog Service - Filter Available Image List",
+		description : "Returns all available company documents that have been filed for a specified UK company. Based on DUNS number. This request is hard-coded to filter by documents in the 'Annual Returns' category.",
+		group : "Image Bank"
+	}, {
 		id : "img_pkg_image_list",
 		label : "Public Document - Available Image List",
 		description : "This operation returns a list of available packages and details about each package (type, size etc.). Requires a Registration Number (for example: FC004460).",
@@ -278,6 +283,18 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		env : "prod",
 		service : "pcs_public_docs",
 		url : "https://maxcvservices.dnb.com/rest/ProductCatalogService/V2/ListAvailablePublicDocuments?DUNSNumber={placeholder}"
+	}, {
+		env : "qa",
+		service : "pcs_public_docs_filter",
+		url : "http://services-ext-qa.dnb.com/rest/ProductCatalogService/V2/ListAvailablePublicDocuments?DUNSNumber={placeholder}&DocumentTypeCode=10248"
+	}, {
+		env : "stg",
+		service : "pcs_public_docs_filter",
+		url : "http://services-ext-stg.dnb.com/rest/ProductCatalogService/V2/ListAvailablePublicDocuments?DUNSNumber={placeholder}&DocumentTypeCode=10248"
+	}, {
+		env : "prod",
+		service : "pcs_public_docs_filter",
+		url : "https://maxcvservices.dnb.com/rest/ProductCatalogService/V2/ListAvailablePublicDocuments?DUNSNumber={placeholder}&DocumentTypeCode=10248"
 	}, {
 		env : "qa",
 		service : "order_company_doc",

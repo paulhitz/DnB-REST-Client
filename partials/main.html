@@ -9,13 +9,13 @@
 
 				<div class="form-horizontal panel-body" role="form">
 					<div class="form-group">
-						<label for="env" class="col-md-2 control-label">Environment:</label>
+						<label for="env" class="col-md-2 control-label" accesskey="e">Environment:</label>
 						<div class="col-md-10">
 							<select class="form-control" id="env" data-ng-model="selectedEnvironment" data-ng-options="env.id as env.label for env in environments" data-ng-change="changeEnvironment(selectedEnvironment);"></select>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="services" class="col-md-2 control-label">Select Service:</label>
+						<label for="services" class="col-md-2 control-label" accesskey="s">Select Service:</label>
 						<div class="col-md-7">
 							<select class="form-control" data-ng-class="{'square-borders': serviceDescription}" id="services" data-ng-model="selectedService" data-ng-options="service.id as service.label group by service.group for service in services" data-ng-disabled="settings.requestUrl" data-ng-change="changeService(selectedService);"></select>
 							<div id="service-description" class="well well-sm" data-ng-show="serviceDescription"><small>{{serviceDescription}}</small></div>
@@ -25,7 +25,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="parameter" class="col-md-2 control-label">Parameter (optional):</label>
+						<label for="parameter" class="col-md-2 control-label" accesskey="p">Parameter (optional):</label>
 						<div class="col-md-10">
 							<div class="row">
 								<div class="col-md-11">

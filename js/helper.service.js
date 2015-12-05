@@ -174,9 +174,9 @@ clientApp.service('clientAppHelper', function($http, utils, ProgressbarService, 
 		$scope.timerEnd = Date.now();
 		$scope.progress = ProgressbarService.getProgressState('COMPLETE');
 		response.headers().status = response.status;
-		$scope.responseBody = JSON.stringify(response.data, null, GENERAL_CONSTANTS.INDENTATION_LEVEL);
-		$scope.responseHeaders = JSON.stringify(response.headers(), null, GENERAL_CONSTANTS.INDENTATION_LEVEL);
-		$scope.requestHeaders = JSON.stringify(response.config, null, GENERAL_CONSTANTS.INDENTATION_LEVEL);
+		$scope.responseBody = utils.stringify(response.data);
+		$scope.responseHeaders = utils.stringify(response.headers());
+		$scope.requestHeaders = utils.stringify(response.config);
 	};
 
 	/**

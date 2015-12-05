@@ -82,14 +82,20 @@ clientApp.service('historyHelper', function(GENERAL_CONSTANTS) {
 });
 
 /**
- * Controller for the displaying more details about a specific history record.
+ * Controller for displaying more details about a specific history record.
  */
-clientApp.controller('HistoryModalInstanceCtrl', function ($scope, $modalInstance, history, GENERAL_CONSTANTS) {
+clientApp.controller('HistoryModalInstanceCtrl', function ($scope, $modalInstance, history, utils, GENERAL_CONSTANTS) {
 	$scope.dateFormat = GENERAL_CONSTANTS.DATE_FORMAT;
-	history.response = JSON.stringify(history.response, null, GENERAL_CONSTANTS.INDENTATION_LEVEL);
 
 	//Add the history object to the scope so it can be used in the modal.
-	$scope.history = history;
+	$scope.history = angular.copy(history);
+	$scope.history.response = utils.stringify($scope.history.response);
+
+	//Copy the request or response to the clipboard.
+	$scope.copy = function(text) {
+		$scope.alerts = [{type: 'success', msg: "Successfully copied to the Clipboard."}];
+		utils.copyToClipboard(text);
+	};
 
 	$scope.cancel = function() {
 		$modalInstance.dismiss('cancel');

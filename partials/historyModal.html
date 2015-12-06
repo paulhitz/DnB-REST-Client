@@ -6,7 +6,7 @@
 	</div>
 	<div class="modal-body small">
 		<alert data-ng-repeat="alert in alerts" type="{{alert.type}}">{{alert.msg}}</alert>
-		<dl id="history">
+		<dl>
 			<dt>Date: </dt>
 			<dd>{{history.date | date:dateFormat}}</dd>
 

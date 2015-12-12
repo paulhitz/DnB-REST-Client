@@ -11,6 +11,7 @@
 	<link href="css/style.css" rel="stylesheet">
 	<link href="lib/components/angular/angular-csp.css" rel="stylesheet">
 	<link href="lib/components/highlightjs/styles/default.css" rel="stylesheet">
+	<script src="js/analytics.js"></script>
 </head>
 <body>
 <div class="container">
@@ -27,7 +28,7 @@
 			<ul class="nav navbar-nav navbar-right" data-ng-controller="EventsCtrl">
 				<li class="navbar-text hidden-sm hidden-xs">Developed by the Dublin Onboard Team</li>
 				<li class="navbar-link-container"><a href="" data-ng-click="loadHistory(false);" accesskey="m">Main</a></li>
-				<li class="navbar-link-container"><a href="" data-ng-click="loadHistory(true);" accesskey="h">History</a></li>
+				<li class="navbar-link-container"><a href="" data-ng-click="loadHistory(true);" accesskey="h" analytics-on>History</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -56,6 +57,8 @@
 <script src="lib/components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 <script src="lib/components/angular-smart-table/dist/smart-table.min.js"></script>
 <script src="lib/components/sizeof/sizeof.min.js"></script>
+<script src="lib/components/angulartics/dist/angulartics.min.js"></script>
+<script src="lib/components/angulartics-google-analytics/dist/angulartics-google-analytics.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/app.constants.js"></script>
 <script src="js/helper.service.js"></script>

@@ -15,16 +15,21 @@
 <body>
 <div class="container">
 	<header class="navbar navbar-default">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#links">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
 		<div class="navbar-brand">
-			<img src="img/new_dnb_logo.png" alt="Logo"> D&amp;B Services REST Client <sup data-ng-cloak>{{version}}</sup>
+			<img src="img/new_dnb_logo.png" alt="Logo"> <span class="hidden-xs">D&amp;B Services REST Client <sup data-ng-cloak>{{version}}</sup></span>
 		</div>
-		<div class="collapse navbar-collapse">
+		<nav class="collapse navbar-collapse" id="links">
 			<ul class="nav navbar-nav navbar-right" data-ng-controller="EventsCtrl">
-				<li class="navbar-text">Developed by the Dublin Onboard Team</li>
+				<li class="navbar-text hidden-sm hidden-xs">Developed by the Dublin Onboard Team</li>
 				<li class="navbar-link-container"><a href="" data-ng-click="loadHistory(false);" accesskey="m">Main</a></li>
 				<li class="navbar-link-container"><a href="" data-ng-click="loadHistory(true);" accesskey="h">History</a></li>
 			</ul>
-		</div>
+		</nav>
 	</header>
 
 	<p>This tool can be used to test various REST Services. A large number of D&amp;B Services are already configured and new ones can be easily added.</p>
@@ -34,7 +39,7 @@
 
 	<footer class="row navbar-default container">
 		<p class="text-muted pull-left">Developed by the Dublin <a href="http://onboard.dnb.com/" target="_blank">Onboard</a> Team.</p>
-		<p class="pull-right">
+		<p class="pull-right hidden-xs">
 			<a href="mailto:hitzp@dnb.com?subject=Feedback">Feedback</a> |
 			<a href="http://dbdlscmap01.uk.dnb.com:8085/display/GEM/Custom+DnB+REST+Client" target="_blank" accesskey="?">Help</a> |
 			<a href="#top" target="_self">Back To Top</a>

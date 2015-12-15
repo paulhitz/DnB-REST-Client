@@ -1,4 +1,5 @@
-var clientApp = angular.module('clientApp', ['ui.bootstrap', 'hljs', 'common', 'smart-table']);
+var clientApp = angular.module('clientApp', ['ui.bootstrap', 'hljs', 'common', 'smart-table', 
+		'angulartics', 'angulartics.google.analytics']);
 
 /**
  * Main application controller. Populates the form and submits the Service Request.

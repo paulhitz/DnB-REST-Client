@@ -3,7 +3,7 @@
  * Various helper functions for the application.
  */
 clientApp.service('clientAppHelper', function($http, utils, ProgressbarService, advancedSettings,
-		SERVICES_CONFIG, credentials, GENERAL_CONSTANTS, $rootScope) {
+		SERVICES_CONFIG, credentials, GENERAL_CONSTANTS, $rootScope, $analytics) {
 	var helper = this;
 
 	/**
@@ -67,6 +67,7 @@ clientApp.service('clientAppHelper', function($http, utils, ProgressbarService, 
 	 * Call the specified endpoint and update the UI.
 	 */
 	helper.callService = function($scope) {
+		$analytics.eventTrack('Send Request', {label: $scope.requestUrl});
 		var requestConfig = { headers: {} };
 		if (advancedSettings.autoAuthenticate) {
 			requestConfig = { headers: {

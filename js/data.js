@@ -132,17 +132,17 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		id : "rdc_alerts_batch",
 		label : "Monitoring - Alerts by Batch ID",
-		description : "Allows a customer to retrieve a list of recent alerts filtered by Batch ID. This request requires a 'Subject ID'.",
+		description : "Allows a customer to retrieve a list of recent alerts filtered by Batch/Subject ID.",
 		group : "ComplianceCheck Service (v1.0)"
 	}, {
 		id : "rdc_subject_alerts",
-		label : "Monitoring - Subject Alerts",
-		description : "Allows a customer to retrieve the results from a successful subject registration. A tracking ID is provided by the 'Register Subject' function that allows for direct access to the results. This ID should be provided as a parameter to this request.",
+		label : "Monitoring - Subject Alerts (GET / PUT)",
+		description : "Allows a customer to retrieve ('GET') the results from a successful subject registration. A 'PUT' request allows cancellation of a registration. A batch ID should be provided as a parameter.",
 		group : "ComplianceCheck Service (v1.0)"
 	}, {
 		id : "rdc_register",
 		label : "Monitoring - Register Entity (POST)",
-		description : "Allows a customer to specify a subject (organizations and/or individuals) to be submitted for compliance screening using the ComplianceCheck service.",
+		description : "Allows a customer to specify a subject (organizations and/or individuals) to be submitted for compliance screening using the ComplianceCheck service. A batch ID is returned.",
 		group : "ComplianceCheck Service (v1.0)"
 	}, {
 		id : "gms_reg",

@@ -1,6 +1,10 @@
 
 //Add a flag to indicate Dev mode.
-chrome.browserAction.setBadgeText({text: "PRO"});
+chrome.management.getSelf(function(result) {
+  if (result.installType === "development") {
+    chrome.browserAction.setBadgeText({text: "PRO"});
+  }
+});
 
 
 //Open the extension in a new tab.

@@ -137,7 +137,7 @@ clientApp.service('clientAppHelper', function($http, utils, ProgressbarService, 
 		var entry = {
 			date: Date(),
 			request: $scope.requestUrl,
-			response: helper.excludeLargeObjects(response),
+			response: utils.stringify(helper.excludeLargeObjects(response)),
 			method: advancedSettings.requestMethod,
 			timer: $scope.timerEnd - $scope.timerStart
 		};

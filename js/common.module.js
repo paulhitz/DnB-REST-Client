@@ -32,9 +32,22 @@ common.service('utils', function() {
 	utils.stringify = function (input) {
 		var returnValue = input;
 		if (angular.isObject(input)) {
-			returnValue = angular.toJson(input, true);
+			returnValue = utils.toJson(input, true);
 		}
 		return returnValue;
+	};
+
+	/**
+	 * Hack to overcome issue in Angular v1.2.8 toJson function. Remove this if upgrading Angular.
+	 *
+	 * @see https://github.com/angular/angular.js/blob/v1.4.8/src/Angular.js#L1164
+	 */
+	utils.toJson = function (obj, pretty) {
+		if (typeof obj === 'undefined') return undefined;
+		if (!angular.isNumber(pretty)) {
+			pretty = pretty ? 2 : null;
+		}
+		return JSON.stringify(obj, angular.toJsonReplacer, pretty);
 	};
 });
 

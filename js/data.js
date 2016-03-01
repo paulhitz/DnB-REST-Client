@@ -209,6 +209,11 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		label : "OpenCorporates - Officers Search",
 		description : "Directors Search from Open Corporates - The largest open database of companies in the world.",
 		group : "External (No Authentication Required)"
+	}, {
+		id : "open_lei",
+		label : "OpenCorporates - LEI Details",
+		description : "Retrieve details about a specific LEI (Legal Entity Identifier). To avoid a HTTP 500 error, a valid LEI number is required as a parameter. E.g. RI37BMPWE56BCJ747E14",
+		group : "External (No Authentication Required)"
 	} ],
 
 	endpoints : [ {
@@ -667,6 +672,10 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		env : "",
 		service : "open_officer",
 		url : "https://api.opencorporates.com/v0.3/officers/search?q={placeholder}&order=score"
+	}, {
+		env : "",
+		service : "open_lei",
+		url : "http://openleis.com/legal_entities/{placeholder}.json"
 	} ],
 
 	//Use this DUNS# if no specific parameter is provided.

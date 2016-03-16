@@ -195,6 +195,11 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		description : "A service for requesting investigations in order to obtain the most recent information on a business. Successful investigations result in the creation or revision of a Business Information Report (BIR).",
 		group : "Miscellaneous"
 	}, {
+		id : "patriot_act",
+		label : "Livingston Sanctions Watchlist Screening - Patriot Act (v2.0)",
+		description : "Initiate a Livingston Screening request. Takes a query term to search against. E.g. 'Smith' or 'ISIS'. The user needs to be configured with a 'SubOrg' number for access to this service.",
+		group : "Miscellaneous"
+	}, {
 		id : "date_test",
 		label : "JSONTest.com Date/Time",
 		description : "JSONTest.com is a testing platform for REST services.",
@@ -540,6 +545,18 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		env : "prod",
 		service : "investigation",
 		url : "https://maxcvservices.dnb.com/rest/InvestigationService/V2/PlaceInvestigation"
+	}, {
+		env : "qa",
+		service : "patriot_act",
+		url : "http://services-ext-qa.dnb.com/v2.0/sanctionswatchlistscreening/subjects/{placeholder}/SANCT_GOVT_WLST_SCRN"
+	}, {
+		env : "stg",
+		service : "patriot_act",
+		url : "http://services-ext-stg.dnb.com/v2.0/sanctionswatchlistscreening/subjects/{placeholder}/SANCT_GOVT_WLST_SCRN"
+	}, {
+		env : "prod",
+		service : "patriot_act",
+		url : "https://maxcvservices.dnb.com/v2.0/sanctionswatchlistscreening/subjects/{placeholder}/SANCT_GOVT_WLST_SCRN"
 	}, {
 		env : "qa",
 		service : "gms_reg",

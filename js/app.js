@@ -33,7 +33,7 @@ clientApp.controller('ClientAppCtrl', function($scope, $log, AuthService, client
 		if (advancedSettings.autoAuthenticate) {
 			//Check that they've supplied credentials. If so, persist them.
 			if (!clientAppHelper.areCredentialsPresent()) {
-				$scope.alerts.push({type: 'danger', msg: "You need to enter an application ID, user ID and a password for automatic authentication. See 'Advanced Settings'."});
+				$scope.alerts.push({type: 'danger', msg: "You need to enter a user ID and a password for automatic authentication. Some services also require an Application ID. See 'Advanced Settings'."});
 				$scope.processing = false;
 				return;
 			}
@@ -76,7 +76,7 @@ clientApp.controller('ClientAppCtrl', function($scope, $log, AuthService, client
 
 		//Display a warning if the production environment is selected.
 		if (env === SERVICES_CONFIG.environments[2].id) {
-			$scope.alerts.push({type: 'warning', msg: "Please be careful using the PRODUCTION environment. A valid application ID, production user and password need to be specified."});
+			$scope.alerts.push({type: 'warning', msg: "Please be careful using the PRODUCTION environment. A valid production user and password need to be specified."});
 		} else {
 			$scope.alerts = [];
 		}

@@ -45,6 +45,16 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		description : "Simplified Global Beneficial Ownership. Lacks share ownership for individuals and other details.",
 		group : "Custom Product Service"
 	}, {
+		id : "cmp_rpt",
+		label : "CMP_VRF_RPT (Compliance Verification Report)",
+		description : "The Compliance Verification Service provides customers with a set of data to support entity verification needs as part of their compliance process. The Compliance Verification Report (CMP_VRF_RPT) product provides a detailed view of Firmographics, Principals, Linkage, Stock Listing and Regulator information of the business.",
+		group : "Custom Product Service"
+	}, {
+		id : "cmp_id",
+		label : "CMP_VRF_ID (Compliance Verification Identity)",
+		description : "The Compliance Verification Service provides customers with a set of data to support entity verification needs as part of their compliance process. The Compliance Verification Identity (CMP_VRF_ID) product provides a lightweight view of Firmographics, Principals, Linkage and Stock Listing information of the business.",
+		group : "Custom Product Service"
+	}, {
 		id : "match",
 		label : "Match (REST version)",
 		description : "Searches for companies based on DUNS#. The Onboard application does NOT use the REST version of Match. It still uses the SOAP version.",
@@ -365,6 +375,30 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		env : "prod",
 		service : "so",
 		url : "https://maxcvservices.dnb.com/V2/organizations/{placeholder}/products/SMPL_OWNSHP?ArchiveProductOptOutIndicator=true&ApplicationTransactionID=onboard&orderReasonCode=6333"
+	}, {
+		env : "qa",
+		service : "cmp_rpt",
+		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "stg",
+		service : "cmp_rpt",
+		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "prod",
+		service : "cmp_rpt",
+		url : "https://maxcvservices.dnb.com/V2/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&ApplicationTransactionID=onboard&orderReasonCode=6333"
+	}, {
+		env : "qa",
+		service : "cmp_id",
+		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "stg",
+		service : "cmp_id",
+		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "prod",
+		service : "cmp_id",
+		url : "https://maxcvservices.dnb.com/V2/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&ApplicationTransactionID=onboard&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "kyc",

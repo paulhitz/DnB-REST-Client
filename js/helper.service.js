@@ -70,10 +70,10 @@ clientApp.service('clientAppHelper', function($http, utils, ProgressbarService, 
 		$analytics.eventTrack('Send Request', {label: $scope.requestUrl});
 		var requestConfig = { headers: {} };
 		if (advancedSettings.autoAuthenticate) {
-			requestConfig = { headers: {
-				'Authorization': $scope.authenticationToken,
-				'ApplicationId': advancedSettings.credentials.appId
-			}};
+			requestConfig.headers['Authorization'] = $scope.authenticationToken;
+			if (advancedSettings.credentials.appId) {
+				requestConfig.headers['ApplicationId'] = advancedSettings.credentials.appId;
+			}
 		}
 
 		//Determine the request method to use (GET/POST/PUT/DELETE/HEAD/PATCH).
@@ -218,7 +218,6 @@ clientApp.service('clientAppHelper', function($http, utils, ProgressbarService, 
 	 */
 	helper.areCredentialsPresent = function() {
 		return advancedSettings.credentials
-			&& advancedSettings.credentials.appId
 			&& advancedSettings.credentials.userId
 			&& advancedSettings.credentials.password;
 	};

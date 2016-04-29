@@ -31,27 +31,27 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		group : "Custom Product Service"
 	}, {
 		id : "kyc",
-		label : "KYC (Know Your Customer)",
+		label : "Know Your Customer (KYC)",
 		description : "The KYC service provides critical compliance information on businesses and principles in 110 countries to ensure a business is compliant with AML regulations and KYC requirements.",
 		group : "Custom Product Service"
 	}, {
 		id : "gbo",
-		label : "GBO (Global Beneficial Ownership)",
+		label : "Global Beneficial Ownership (GBO)",
 		description : "The GBO service combines global corporate linkage and individual share ownership. It enables a customer to establish direct and indirect Ultimate Beneficial Ownership at the level that is required for AML/KYC.",
 		group : "Custom Product Service"
 	}, {
 		id : "so",
-		label : "SO (Simple Ownership)",
+		label : "Simple Ownership (SO)",
 		description : "Simplified Global Beneficial Ownership. Lacks share ownership for individuals and other details.",
 		group : "Custom Product Service"
 	}, {
 		id : "cmp_rpt",
-		label : "CMP_VRF_RPT (Compliance Verification Report)",
+		label : "Compliance Verification Report (CMP_VRF_RPT)",
 		description : "The Compliance Verification Service provides customers with a set of data to support entity verification needs as part of their compliance process. The Compliance Verification Report (CMP_VRF_RPT) product provides a detailed view of Firmographics, Principals, Linkage, Stock Listing and Regulator information of the business.",
 		group : "Custom Product Service"
 	}, {
 		id : "cmp_id",
-		label : "CMP_VRF_ID (Compliance Verification Identity)",
+		label : "Compliance Verification Identity (CMP_VRF_ID)",
 		description : "The Compliance Verification Service provides customers with a set of data to support entity verification needs as part of their compliance process. The Compliance Verification Identity (CMP_VRF_ID) product provides a lightweight view of Firmographics, Principals, Linkage and Stock Listing information of the business.",
 		group : "Custom Product Service"
 	}, {
@@ -378,27 +378,27 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "cmp_rpt",
-		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "http://services-ext-qa.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_RPT?orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "cmp_rpt",
-		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "http://services-ext-stg.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_RPT?orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "cmp_rpt",
-		url : "https://maxcvservices.dnb.com/V2/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&ApplicationTransactionID=onboard&orderReasonCode=6333"
+		url : "https://maxcvservices.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_RPT?orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "cmp_id",
-		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "http://services-ext-qa.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_ID?orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "cmp_id",
-		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "http://services-ext-stg.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_ID?orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "cmp_id",
-		url : "https://maxcvservices.dnb.com/V2/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&ApplicationTransactionID=onboard&orderReasonCode=6333"
+		url : "https://maxcvservices.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_ID?orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "kyc",

@@ -80,9 +80,19 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		description : "This service uses Companies House data. This particular operation searches for directors/officers. The last name (e.g. 'Smith') should be provided as a parameter.",
 		group : "Companies House"
 	}, {
+		id : "ch_director_search_v3",
+		label : "Director Search (v3.0)",
+		description : "This service uses Companies House data. This particular operation searches for directors/officers. The name (e.g. 'Smith' or 'John Smith') should be provided as a parameter.",
+		group : "Companies House"
+	}, {
 		id : "ch_director_order",
 		label : "Officer Details (v1.0)",
 		description : "This service uses Companies House data. This particular operation provides more details about a specified officer/director. An 'Officer ID' should be passed as a parameter. The content of this parameter should be URL-encoded.",
+		group : "Companies House"
+	}, {
+		id : "ch_director_order_v3",
+		label : "Officer Details (v3.0)",
+		description : "This service uses Companies House data. This particular operation provides more details about a specified officer/director. A 'Person ID' should be passed as a parameter. For example: '/officers/yg4yYWPJfQvJpXID4B0lbkmoA-I/appointments'",
 		group : "Companies House"
 	}, {
 		id : "ch_filing_history",
@@ -555,6 +565,30 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		env : "prod",
 		service : "ch_director_order",
 		url : "https://maxcvservices.dnb.com/v1.0/companyhouse/officers/{placeholder}"
+	}, {
+		env : "qa",
+		service : "ch_director_search_v3",
+		url : "http://services-ext-qa.dnb.com/v3.0/companyhouse/officers?officerFullName={placeholder}"
+	}, {
+		env : "stg",
+		service : "ch_director_search_v3",
+		url : "http://services-ext-stg.dnb.com/v3.0/companyhouse/officers?officerFullName={placeholder}"
+	}, {
+		env : "prod",
+		service : "ch_director_search_v3",
+		url : "https://maxcvservices.dnb.com/v3.0/companyhouse/officers?officerFullName={placeholder}"
+	}, {
+		env : "qa",
+		service : "ch_director_order_v3",
+		url : "http://services-ext-qa.dnb.com/v3.0/companyhouse/officers/{placeholder}"
+	}, {
+		env : "stg",
+		service : "ch_director_order_v3",
+		url : "http://services-ext-stg.dnb.com/v3.0/companyhouse/officers/{placeholder}"
+	}, {
+		env : "prod",
+		service : "ch_director_order_v3",
+		url : "https://maxcvservices.dnb.com/v3.0/companyhouse/officers/{placeholder}"
 	}, {
 		env : "qa",
 		service : "ch_filing_history",

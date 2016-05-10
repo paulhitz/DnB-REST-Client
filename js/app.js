@@ -51,7 +51,7 @@ clientApp.controller('ClientAppCtrl', function($scope, $log, AuthService, client
 				function(error) {
 					$log.error(error);
 					$scope.alerts.push({type: 'danger', msg: "An error occurred while authenticating. Please check the Application ID, User ID and Password."});
-					$scope.alerts.push({type: 'info', msg: "If the problem persists, you may want to try Incognito Mode or try clearing your cache. If the issue is solely with a particular environment, then the Authentication Service for that environment may be down."});
+					$scope.alerts.push({type: 'info', msg: "If the problem persists, you may want to try Incognito Mode or try clearing your cache. If the issue is solely with a particular environment, then the Authentication Service for that environment may be down or the account may be locked out."});
 					$scope.processing = false;
 				}
 			);

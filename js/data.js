@@ -27,31 +27,36 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		id : "firm",
 		label : "Firmographics (DCP_PREM_ONBRD)",
-		description : "Provides basic marketing information such as business name, address, trade style, executive names and titles, financials, number of employees etc.",
+		description : "Provides basic marketing information such as business name, address, trade style, financials, number of employees etc.",
+		group : "Custom Product Service"
+	}, {
+		id : "dcp_prem",
+		label : "Firmographics (DCP_PREM)",
+		description : "Provides basic marketing information such as business name, address, trade style, financials, number of employees etc. This is configured for DCP_PREM (Detailed Company Profile - Premium) level. Other levels include DCP_STD and DCP_ENH.",
 		group : "Custom Product Service"
 	}, {
 		id : "kyc",
-		label : "KYC (Know Your Customer)",
+		label : "Know Your Customer (KYC)",
 		description : "The KYC service provides critical compliance information on businesses and principles in 110 countries to ensure a business is compliant with AML regulations and KYC requirements.",
 		group : "Custom Product Service"
 	}, {
 		id : "gbo",
-		label : "GBO (Global Beneficial Ownership)",
+		label : "Global Beneficial Ownership (GBO)",
 		description : "The GBO service combines global corporate linkage and individual share ownership. It enables a customer to establish direct and indirect Ultimate Beneficial Ownership at the level that is required for AML/KYC.",
 		group : "Custom Product Service"
 	}, {
 		id : "so",
-		label : "SO (Simple Ownership)",
+		label : "Simple Ownership (SO)",
 		description : "Simplified Global Beneficial Ownership. Lacks share ownership for individuals and other details.",
 		group : "Custom Product Service"
 	}, {
 		id : "cmp_rpt",
-		label : "CMP_VRF_RPT (Compliance Verification Report)",
+		label : "Compliance Verification Report (CMP_VRF_RPT)",
 		description : "The Compliance Verification Service provides customers with a set of data to support entity verification needs as part of their compliance process. The Compliance Verification Report (CMP_VRF_RPT) product provides a detailed view of Firmographics, Principals, Linkage, Stock Listing and Regulator information of the business.",
 		group : "Custom Product Service"
 	}, {
 		id : "cmp_id",
-		label : "CMP_VRF_ID (Compliance Verification Identity)",
+		label : "Compliance Verification Identity (CMP_VRF_ID)",
 		description : "The Compliance Verification Service provides customers with a set of data to support entity verification needs as part of their compliance process. The Compliance Verification Identity (CMP_VRF_ID) product provides a lightweight view of Firmographics, Principals, Linkage and Stock Listing information of the business.",
 		group : "Custom Product Service"
 	}, {
@@ -80,9 +85,19 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		description : "This service uses Companies House data. This particular operation searches for directors/officers. The last name (e.g. 'Smith') should be provided as a parameter.",
 		group : "Companies House"
 	}, {
+		id : "ch_director_search_v3",
+		label : "Director Search (v3.0)",
+		description : "This service uses Companies House data. This particular operation searches for directors/officers. The name (e.g. 'Smith' or 'John Smith') should be provided as a parameter.",
+		group : "Companies House"
+	}, {
 		id : "ch_director_order",
 		label : "Officer Details (v1.0)",
 		description : "This service uses Companies House data. This particular operation provides more details about a specified officer/director. An 'Officer ID' should be passed as a parameter. The content of this parameter should be URL-encoded.",
+		group : "Companies House"
+	}, {
+		id : "ch_director_order_v3",
+		label : "Officer Details (v3.0)",
+		description : "This service uses Companies House data. This particular operation provides more details about a specified officer/director. A 'Person ID' should be passed as a parameter. For example: '/officers/yg4yYWPJfQvJpXID4B0lbkmoA-I/appointments'",
 		group : "Companies House"
 	}, {
 		id : "ch_filing_history",
@@ -342,15 +357,27 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "firm",
-		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/DCP_PREM_ONBRD?ArchiveProductOptOutIndicator=true"
+		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/DCP_PREM_ONBRD?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "firm",
-		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/DCP_PREM_ONBRD?ArchiveProductOptOutIndicator=true"
+		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/DCP_PREM_ONBRD?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "firm",
-		url : "https://maxcvservices.dnb.com/V2.0/organizations/{placeholder}/products/DCP_PREM_ONBRD?ArchiveProductOptOutIndicator=true"
+		url : "https://maxcvservices.dnb.com/V2.0/organizations/{placeholder}/products/DCP_PREM_ONBRD?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "qa",
+		service : "dcp_prem",
+		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/DCP_PREM?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "stg",
+		service : "dcp_prem",
+		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/DCP_PREM?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "prod",
+		service : "dcp_prem",
+		url : "https://maxcvservices.dnb.com/V2.0/organizations/{placeholder}/products/DCP_PREM?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "gbo",
@@ -378,39 +405,39 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "cmp_rpt",
-		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "http://services-ext-qa.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "cmp_rpt",
-		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "http://services-ext-stg.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "cmp_rpt",
-		url : "https://maxcvservices.dnb.com/V2/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&ApplicationTransactionID=onboard&orderReasonCode=6333"
+		url : "https://maxcvservices.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "cmp_id",
-		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "http://services-ext-qa.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "cmp_id",
-		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "http://services-ext-stg.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "cmp_id",
-		url : "https://maxcvservices.dnb.com/V2/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&ApplicationTransactionID=onboard&orderReasonCode=6333"
+		url : "https://maxcvservices.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "kyc",
-		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true"
+		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "kyc",
-		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true"
+		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "kyc",
-		url : "https://maxcvservices.dnb.com/V2/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true"
+		url : "https://maxcvservices.dnb.com/V2/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "rdc_search",
@@ -555,6 +582,30 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		env : "prod",
 		service : "ch_director_order",
 		url : "https://maxcvservices.dnb.com/v1.0/companyhouse/officers/{placeholder}"
+	}, {
+		env : "qa",
+		service : "ch_director_search_v3",
+		url : "http://services-ext-qa.dnb.com/v3.0/companyhouse/officers?officerFullName={placeholder}"
+	}, {
+		env : "stg",
+		service : "ch_director_search_v3",
+		url : "http://services-ext-stg.dnb.com/v3.0/companyhouse/officers?officerFullName={placeholder}"
+	}, {
+		env : "prod",
+		service : "ch_director_search_v3",
+		url : "https://maxcvservices.dnb.com/v3.0/companyhouse/officers?officerFullName={placeholder}"
+	}, {
+		env : "qa",
+		service : "ch_director_order_v3",
+		url : "http://services-ext-qa.dnb.com/v3.0/companyhouse/officers/{placeholder}"
+	}, {
+		env : "stg",
+		service : "ch_director_order_v3",
+		url : "http://services-ext-stg.dnb.com/v3.0/companyhouse/officers/{placeholder}"
+	}, {
+		env : "prod",
+		service : "ch_director_order_v3",
+		url : "https://maxcvservices.dnb.com/v3.0/companyhouse/officers/{placeholder}"
 	}, {
 		env : "qa",
 		service : "ch_filing_history",

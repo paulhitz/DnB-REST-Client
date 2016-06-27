@@ -27,7 +27,12 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		id : "firm",
 		label : "Firmographics (DCP_PREM_ONBRD)",
-		description : "Provides basic marketing information such as business name, address, trade style, executive names and titles, financials, number of employees etc.",
+		description : "Provides basic marketing information such as business name, address, trade style, financials, number of employees etc.",
+		group : "Custom Product Service"
+	}, {
+		id : "dcp_prem",
+		label : "Firmographics (DCP_PREM)",
+		description : "Provides basic marketing information such as business name, address, trade style, financials, number of employees etc. This is configured for DCP_PREM (Detailed Company Profile - Premium) level. Other levels include DCP_STD and DCP_ENH.",
 		group : "Custom Product Service"
 	}, {
 		id : "kyc",
@@ -352,15 +357,27 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "firm",
-		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/DCP_PREM_ONBRD?ArchiveProductOptOutIndicator=true"
+		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/DCP_PREM_ONBRD?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "firm",
-		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/DCP_PREM_ONBRD?ArchiveProductOptOutIndicator=true"
+		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/DCP_PREM_ONBRD?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "firm",
-		url : "https://maxcvservices.dnb.com/V2.0/organizations/{placeholder}/products/DCP_PREM_ONBRD?ArchiveProductOptOutIndicator=true"
+		url : "https://maxcvservices.dnb.com/V2.0/organizations/{placeholder}/products/DCP_PREM_ONBRD?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "qa",
+		service : "dcp_prem",
+		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/DCP_PREM?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "stg",
+		service : "dcp_prem",
+		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/DCP_PREM?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "prod",
+		service : "dcp_prem",
+		url : "https://maxcvservices.dnb.com/V2.0/organizations/{placeholder}/products/DCP_PREM?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "gbo",
@@ -388,39 +405,39 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "cmp_rpt",
-		url : "http://services-ext-qa.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_RPT?orderReasonCode=6333"
+		url : "http://services-ext-qa.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "cmp_rpt",
-		url : "http://services-ext-stg.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_RPT?orderReasonCode=6333"
+		url : "http://services-ext-stg.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "cmp_rpt",
-		url : "https://maxcvservices.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_RPT?orderReasonCode=6333"
+		url : "https://maxcvservices.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "cmp_id",
-		url : "http://services-ext-qa.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_ID?orderReasonCode=6333"
+		url : "http://services-ext-qa.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "cmp_id",
-		url : "http://services-ext-stg.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_ID?orderReasonCode=6333"
+		url : "http://services-ext-stg.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "cmp_id",
-		url : "https://maxcvservices.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_ID?orderReasonCode=6333"
+		url : "https://maxcvservices.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "kyc",
-		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true"
+		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "kyc",
-		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true"
+		url : "http://services-ext-stg.dnb.com/V2.0/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "kyc",
-		url : "https://maxcvservices.dnb.com/V2/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true"
+		url : "https://maxcvservices.dnb.com/V2/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "rdc_search",

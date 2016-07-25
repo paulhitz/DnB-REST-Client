@@ -249,7 +249,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	endpoints : [ {
 		env : "qa",
 		service : "auth",
-		url : "http://services-ext-qa.dnb.com/rest/Authentication"
+		url : "https://direct-qa.dnb.com/rest/Authentication"
 	}, {
 		env : "stg",
 		service : "auth",
@@ -261,7 +261,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "pcs",
-		url : "http://services-ext-qa.dnb.com/rest/ProductCatalogService/V2/ListAvailableProduct?DUNSNumber={placeholder}"
+		url : "https://direct-qa.dnb.com/rest/ProductCatalogService/V2/ListAvailableProduct?DUNSNumber={placeholder}"
 	}, {
 		env : "stg",
 		service : "pcs",
@@ -273,7 +273,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "img_pkg_image_list",
-		url : "http://services-ext-qa.dnb.com/V2.2/organizations/{placeholder}/publicdocuments?CountryISOAlpha2Code=GB"
+		url : "https://direct-qa.dnb.com/V2.2/organizations/{placeholder}/publicdocuments?CountryISOAlpha2Code=GB"
 	}, {
 		env : "stg",
 		service : "img_pkg_image_list",
@@ -285,7 +285,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "img_pkg_image_list_filter",
-		url : "http://services-ext-qa.dnb.com/V2.2/organizations/{placeholder}/publicdocuments?CountryISOAlpha2Code=GB&DocumentTypeCode=10248"
+		url : "https://direct-qa.dnb.com/V2.2/organizations/{placeholder}/publicdocuments?CountryISOAlpha2Code=GB&DocumentTypeCode=10248"
 	}, {
 		env : "stg",
 		service : "img_pkg_image_list_filter",
@@ -297,7 +297,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "img_pkg_download",
-		url : "http://services-ext-qa.dnb.com/V3.1/organizations/{placeholder}/products/publicdocument?CountryISOAlpha2Code=GB&DocumentPackageName=CRI&DocumentFilingHistoryRequiredIndicator=true&COVERPAGEDUNS=210279774&COVERPAGEORGANIZATIONNAME=Paul&CoverPageStreetAddressLine-1=15-17%20King%20Street%2C&CoverPageStreetAddressLine-2=London%2C&CoverPageStreetAddressLine-3=EC2V%208EA&CoverPageStreetAddressLine-4=GB&COVERPAGEUSERNAME=Mr%20Dan%20David&COVERPAGECUSTOMERREFERENCETEXT=12345"
+		url : "https://direct-qa.dnb.com/V3.1/organizations/{placeholder}/products/publicdocument?CountryISOAlpha2Code=GB&DocumentPackageName=CRI&DocumentFilingHistoryRequiredIndicator=true&COVERPAGEDUNS=210279774&COVERPAGEORGANIZATIONNAME=Paul&CoverPageStreetAddressLine-1=15-17%20King%20Street%2C&CoverPageStreetAddressLine-2=London%2C&CoverPageStreetAddressLine-3=EC2V%208EA&CoverPageStreetAddressLine-4=GB&COVERPAGEUSERNAME=Mr%20Dan%20David&COVERPAGECUSTOMERREFERENCETEXT=12345"
 	}, {
 		env : "stg",
 		service : "img_pkg_download",
@@ -309,7 +309,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "pcs_public_docs",
-		url : "http://services-ext-qa.dnb.com/rest/ProductCatalogService/V2/ListAvailablePublicDocuments?DUNSNumber={placeholder}"
+		url : "https://direct-qa.dnb.com/rest/ProductCatalogService/V2/ListAvailablePublicDocuments?DUNSNumber={placeholder}"
 	}, {
 		env : "stg",
 		service : "pcs_public_docs",
@@ -321,7 +321,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "pcs_public_docs_filter",
-		url : "http://services-ext-qa.dnb.com/rest/ProductCatalogService/V2/ListAvailablePublicDocuments?DUNSNumber={placeholder}&DocumentTypeCode=10248"
+		url : "https://direct-qa.dnb.com/rest/ProductCatalogService/V2/ListAvailablePublicDocuments?DUNSNumber={placeholder}&DocumentTypeCode=10248"
 	}, {
 		env : "stg",
 		service : "pcs_public_docs_filter",
@@ -333,7 +333,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "order_company_doc",
-		url : "http://services-ext-qa.dnb.com/rest/ReportProductService/V2/OrderCompanyPublicDocument?DUNSNumber=987027422&FilingDate=2015-05-01&FilingReferenceNumber=184269936&DocumentFormName=B10(R)"
+		url : "https://direct-qa.dnb.com/rest/ReportProductService/V2/OrderCompanyPublicDocument?DUNSNumber=987027422&FilingDate=2015-05-01&FilingReferenceNumber=184269936&DocumentFormName=B10(R)"
 	}, {
 		env : "stg",
 		service : "order_company_doc",
@@ -345,7 +345,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "linkage",
-		url : "http://services-ext-qa.dnb.com/rest/LinkageService/V2/OrderProduct?DUNSNumber={placeholder}&CountryISOAlpha2Code=GB&DNBProductID=LNK_FF_MNRT"
+		url : "https://direct-qa.dnb.com/rest/LinkageService/V2/OrderProduct?DUNSNumber={placeholder}&CountryISOAlpha2Code=GB&DNBProductID=LNK_FF_MNRT"
 	}, {
 		env : "stg",
 		service : "linkage",
@@ -357,7 +357,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "firm",
-		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/DCP_PREM_ONBRD?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-qa.dnb.com/V2/organizations/{placeholder}/products/DCP_PREM_ONBRD?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "firm",
@@ -369,7 +369,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "dcp_prem",
-		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/DCP_PREM?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-qa.dnb.com/V2/organizations/{placeholder}/products/DCP_PREM?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "dcp_prem",
@@ -381,7 +381,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "gbo",
-		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/GBO?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-qa.dnb.com/V2/organizations/{placeholder}/products/GBO?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "gbo",
@@ -393,7 +393,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "so",
-		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/SMPL_OWNSHP?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-qa.dnb.com/V2/organizations/{placeholder}/products/SMPL_OWNSHP?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "so",
@@ -405,7 +405,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "cmp_rpt",
-		url : "http://services-ext-qa.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-qa.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "cmp_rpt",
@@ -417,7 +417,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "cmp_id",
-		url : "http://services-ext-qa.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-qa.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "cmp_id",
@@ -429,7 +429,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "kyc",
-		url : "http://services-ext-qa.dnb.com/V2/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-qa.dnb.com/V2/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "kyc",
@@ -441,7 +441,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "rdc_search",
-		url : "http://services-ext-qa.dnb.com/V1.0/compliancecheck/entities/alerts?CandidateDisplayStartSequenceNumber=1&CandidatePerPageMaximumQuantity=100&CustomerBillingEndorsementText=dnb_test&SubjectTypeText=P&subjectname={placeholder}"
+		url : "https://direct-qa.dnb.com/V1.0/compliancecheck/entities/alerts?CandidateDisplayStartSequenceNumber=1&CandidatePerPageMaximumQuantity=100&CustomerBillingEndorsementText=dnb_test&SubjectTypeText=P&subjectname={placeholder}"
 	}, {
 		env : "stg",
 		service : "rdc_search",
@@ -453,7 +453,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "rdc_entity",
-		url : "http://services-ext-qa.dnb.com/V1.0/compliancecheck/entities/EntitySystemID-1b59b76f0e75fee15d3f3d53eb346cc4/products/CMP_ENT_DTL?ProductFormatPreferenceCode=7004&httpClient.socketTimeout=30000&httpClient.connectTimeout=30000&CustomerBillingEndorsementText=dnb_test"
+		url : "https://direct-qa.dnb.com/V1.0/compliancecheck/entities/EntitySystemID-1b59b76f0e75fee15d3f3d53eb346cc4/products/CMP_ENT_DTL?ProductFormatPreferenceCode=7004&httpClient.socketTimeout=30000&httpClient.connectTimeout=30000&CustomerBillingEndorsementText=dnb_test"
 	}, {
 		env : "stg",
 		service : "rdc_entity",
@@ -465,7 +465,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "rdc_entity_pdf",
-		url : "http://services-ext-qa.dnb.com/V1.0/compliancecheck/entities/EntitySystemID-1b59b76f0e75fee15d3f3d53eb346cc4/products/CMP_ENT_VW?ProductFormatPreferenceCode=13204&httpClient.socketTimeout=30000&httpClient.connectTimeout=30000&CustomerBillingEndorsementText=dnb_test"
+		url : "https://direct-qa.dnb.com/V1.0/compliancecheck/entities/EntitySystemID-1b59b76f0e75fee15d3f3d53eb346cc4/products/CMP_ENT_VW?ProductFormatPreferenceCode=13204&httpClient.socketTimeout=30000&httpClient.connectTimeout=30000&CustomerBillingEndorsementText=dnb_test"
 	}, {
 		env : "stg",
 		service : "rdc_entity_pdf",
@@ -477,7 +477,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "rdc_alerts",
-		url : "http://services-ext-qa.dnb.com/V1.0/compliancecheck/subjects/alerts"
+		url : "https://direct-qa.dnb.com/V1.0/compliancecheck/subjects/alerts"
 	}, {
 		env : "stg",
 		service : "rdc_alerts",
@@ -489,7 +489,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "rdc_alerts_batch",
-		url : "http://services-ext-qa.dnb.com/V1.0/compliancecheck/subjects/alerts?SubjectID={placeholder}"
+		url : "https://direct-qa.dnb.com/V1.0/compliancecheck/subjects/alerts?SubjectID={placeholder}"
 	}, {
 		env : "stg",
 		service : "rdc_alerts_batch",
@@ -501,7 +501,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "rdc_subject_alerts",
-		url : "http://services-ext-qa.dnb.com/V1.0/compliancecheck/subjects/{placeholder}?ComplianceDataModuleID=ALERTS"
+		url : "https://direct-qa.dnb.com/V1.0/compliancecheck/subjects/{placeholder}?ComplianceDataModuleID=ALERTS"
 	}, {
 		env : "stg",
 		service : "rdc_subject_alerts",
@@ -513,7 +513,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "rdc_register",
-		url : "http://services-ext-qa.dnb.com/V1.0/compliancecheck/subjects"
+		url : "https://direct-qa.dnb.com/V1.0/compliancecheck/subjects"
 	}, {
 		env : "stg",
 		service : "rdc_register",
@@ -525,7 +525,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "match",
-		url : "http://services-ext-qa.dnb.com/rest/CompanyService/V2/Match?CountryISOAlpha2Code=GB&DUNSNumber={placeholder}"
+		url : "https://direct-qa.dnb.com/rest/CompanyService/V2/Match?CountryISOAlpha2Code=GB&DUNSNumber={placeholder}"
 	}, {
 		env : "stg",
 		service : "match",
@@ -537,7 +537,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "global",
-		url : "http://services-ext-qa.dnb.com/V4.0/organizations?ExactLocationFindIndicator=true&InclusionDataDescription-1=IncludeUndeliverableAddressSubject&InclusionDataDescription-2=IncludeIncompleteData&InclusionDataDescription-3=IncludeOutofBusiness&SearchModeDescription=Basic&candidateMaximumQuantity=250&candidatePerPageMaximumQuantity=250&findcompany=true&httpClient.connectTimeout=10000&httpClient.socketTimeout=10000&keywordText={placeholder}"
+		url : "https://direct-qa.dnb.com/V4.0/organizations?ExactLocationFindIndicator=true&InclusionDataDescription-1=IncludeUndeliverableAddressSubject&InclusionDataDescription-2=IncludeIncompleteData&InclusionDataDescription-3=IncludeOutofBusiness&SearchModeDescription=Basic&candidateMaximumQuantity=250&candidatePerPageMaximumQuantity=250&findcompany=true&httpClient.connectTimeout=10000&httpClient.socketTimeout=10000&keywordText={placeholder}"
 	}, {
 		env : "stg",
 		service : "global",
@@ -549,7 +549,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "list_portfolio",
-		url : "http://services-ext-qa.dnb.com/rest/PortfolioService/V2/ListPortfolioAsset"
+		url : "https://direct-qa.dnb.com/rest/PortfolioService/V2/ListPortfolioAsset"
 	}, {
 		env : "stg",
 		service : "list_portfolio",
@@ -561,7 +561,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "ch_director_search",
-		url : "http://services-ext-qa.dnb.com/v1.0/companyhouse/officers?officerType=CUR&officerLastName={placeholder}"
+		url : "https://direct-qa.dnb.com/v1.0/companyhouse/officers?officerType=CUR&officerLastName={placeholder}"
 	}, {
 		env : "stg",
 		service : "ch_director_search",
@@ -573,7 +573,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "ch_director_order",
-		url : "http://services-ext-qa.dnb.com/v1.0/companyhouse/officers/{placeholder}"
+		url : "https://direct-qa.dnb.com/v1.0/companyhouse/officers/{placeholder}"
 	}, {
 		env : "stg",
 		service : "ch_director_order",
@@ -585,7 +585,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "ch_director_search_v3",
-		url : "http://services-ext-qa.dnb.com/v3.0/companyhouse/officers?officerFullName={placeholder}"
+		url : "https://direct-qa.dnb.com/v3.0/companyhouse/officers?officerFullName={placeholder}"
 	}, {
 		env : "stg",
 		service : "ch_director_search_v3",
@@ -597,7 +597,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "ch_director_order_v3",
-		url : "http://services-ext-qa.dnb.com/v3.0/companyhouse/officers/{placeholder}"
+		url : "https://direct-qa.dnb.com/v3.0/companyhouse/officers/{placeholder}"
 	}, {
 		env : "stg",
 		service : "ch_director_order_v3",
@@ -609,7 +609,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "ch_filing_history",
-		url : "http://services-ext-qa.dnb.com/v2.0/companyhouse/filinghistory?organizationIdentificationNumber={placeholder}&CapitalDocumentRequiredIndicator=true"
+		url : "https://direct-qa.dnb.com/v2.0/companyhouse/filinghistory?organizationIdentificationNumber={placeholder}&CapitalDocumentRequiredIndicator=true"
 	}, {
 		env : "stg",
 		service : "ch_filing_history",
@@ -621,7 +621,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "investigation",
-		url : "http://services-ext-qa.dnb.com/rest/InvestigationService/V2/PlaceInvestigation"
+		url : "https://direct-qa.dnb.com/rest/InvestigationService/V2/PlaceInvestigation"
 	}, {
 		env : "stg",
 		service : "investigation",
@@ -633,7 +633,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "patriot_act",
-		url : "http://services-ext-qa.dnb.com/v2.0/sanctionswatchlistscreening/subjects/{placeholder}/SANCT_GOVT_WLST_SCRN"
+		url : "https://direct-qa.dnb.com/v2.0/sanctionswatchlistscreening/subjects/{placeholder}/SANCT_GOVT_WLST_SCRN"
 	}, {
 		env : "stg",
 		service : "patriot_act",
@@ -645,7 +645,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "gms_reg",
-		url : "http://services-ext-qa.dnb.com/V2.0/gmsmonitoring/registrations?ApplicationTransactionID=onboard-1&TransactionTimestamp=2001-09-11T09:30:47-05:00&ApplicationID=36&UserID=teamjoly@dnb.com&CustomerID=965088422&UserCountryISOAlpha2Code=GB&LanguagePreferenceCode=41"
+		url : "https://direct-qa.dnb.com/V2.0/gmsmonitoring/registrations?ApplicationTransactionID=onboard-1&TransactionTimestamp=2001-09-11T09:30:47-05:00&ApplicationID=36&UserID=teamjoly@dnb.com&CustomerID=965088422&UserCountryISOAlpha2Code=GB&LanguagePreferenceCode=41"
 	}, {
 		env : "stg",
 		service : "gms_reg",
@@ -657,7 +657,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "gms_profile_create",
-		url : "http://services-ext-qa.dnb.com/V2.0/gmsmonitoring/monitoringprofiles?ApplicationTransactionID=onboard-1&TransactionTimestamp=2001-09-11T09:30:47-05:00&ApplicationID=36&UserID=teamjoly@dnb.com&CustomerID=965088422&UserCountryISOAlpha2Code=GB&LanguagePreferenceCode=41"
+		url : "https://direct-qa.dnb.com/V2.0/gmsmonitoring/monitoringprofiles?ApplicationTransactionID=onboard-1&TransactionTimestamp=2001-09-11T09:30:47-05:00&ApplicationID=36&UserID=teamjoly@dnb.com&CustomerID=965088422&UserCountryISOAlpha2Code=GB&LanguagePreferenceCode=41"
 	}, {
 		env : "stg",
 		service : "gms_profile_create",
@@ -669,7 +669,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "gms_profile_param",
-		url : "http://services-ext-qa.dnb.com/V2.0/gmsmonitoring/monitoringprofiles/{placeholder}?ApplicationTransactionID=onboard-1&TransactionTimestamp=2001-09-11T09:30:47-05:00&ApplicationID=36&UserID=teamjoly@dnb.com&CustomerID=965088422&UserCountryISOAlpha2Code=GB&LanguagePreferenceCode=41"
+		url : "https://direct-qa.dnb.com/V2.0/gmsmonitoring/monitoringprofiles/{placeholder}?ApplicationTransactionID=onboard-1&TransactionTimestamp=2001-09-11T09:30:47-05:00&ApplicationID=36&UserID=teamjoly@dnb.com&CustomerID=965088422&UserCountryISOAlpha2Code=GB&LanguagePreferenceCode=41"
 	}, {
 		env : "stg",
 		service : "gms_profile_param",
@@ -681,7 +681,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "gms_notice_list",
-		url : "http://services-ext-qa.dnb.com/V2.0/gmsmonitoring/changenotices?ApplicationTransactionID=onboard-1&TransactionTimestamp=2001-09-11T09:30:47-05:00&ApplicationID=36&UserID=teamjoly@dnb.com&CustomerID=965088422&UserCountryISOAlpha2Code=GB&LanguagePreferenceCode=41"
+		url : "https://direct-qa.dnb.com/V2.0/gmsmonitoring/changenotices?ApplicationTransactionID=onboard-1&TransactionTimestamp=2001-09-11T09:30:47-05:00&ApplicationID=36&UserID=teamjoly@dnb.com&CustomerID=965088422&UserCountryISOAlpha2Code=GB&LanguagePreferenceCode=41"
 	}, {
 		env : "stg",
 		service : "gms_notice_list",
@@ -693,7 +693,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "gms_notice_list_count",
-		url : "http://services-ext-qa.dnb.com/V2.0/gmsmonitoring/changenotices?ApplicationTransactionID=onboard-1&TransactionTimestamp=2001-09-11T09:30:47-05:00&ApplicationID=36&UserID=teamjoly@dnb.com&CustomerID=965088422&UserCountryISOAlpha2Code=GB&LanguagePreferenceCode=41&GetCountOnlyIndicator=1"
+		url : "https://direct-qa.dnb.com/V2.0/gmsmonitoring/changenotices?ApplicationTransactionID=onboard-1&TransactionTimestamp=2001-09-11T09:30:47-05:00&ApplicationID=36&UserID=teamjoly@dnb.com&CustomerID=965088422&UserCountryISOAlpha2Code=GB&LanguagePreferenceCode=41&GetCountOnlyIndicator=1"
 	}, {
 		env : "stg",
 		service : "gms_notice_list_count",
@@ -705,7 +705,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "gms_notice_param",
-		url : "http://services-ext-qa.dnb.com/V2.0/gmsmonitoring/changenotices/{placeholder}?ApplicationTransactionID=onboard-1&TransactionTimestamp=2001-09-11T09:30:47-05:00&ApplicationID=36&UserID=teamjoly@dnb.com&CustomerID=965088422&UserCountryISOAlpha2Code=GB&LanguagePreferenceCode=41"
+		url : "https://direct-qa.dnb.com/V2.0/gmsmonitoring/changenotices/{placeholder}?ApplicationTransactionID=onboard-1&TransactionTimestamp=2001-09-11T09:30:47-05:00&ApplicationID=36&UserID=teamjoly@dnb.com&CustomerID=965088422&UserCountryISOAlpha2Code=GB&LanguagePreferenceCode=41"
 	}, {
 		env : "stg",
 		service : "gms_notice_param",
@@ -717,7 +717,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "gms_subject",
-		url : "http://services-ext-qa.dnb.com/V2.0/gmsmonitoring/monitoringsubjects/{placeholder}?DNBProductID=GSRL7&ApplicationTransactionID=onboard-1&TransactionTimestamp=2001-09-11T09:30:47-05:00&ApplicationID=36&UserID=teamjoly@dnb.com&CustomerID=965088422&UserCountryISOAlpha2Code=GB&LanguagePreferenceCode=41"
+		url : "https://direct-qa.dnb.com/V2.0/gmsmonitoring/monitoringsubjects/{placeholder}?DNBProductID=GSRL7&ApplicationTransactionID=onboard-1&TransactionTimestamp=2001-09-11T09:30:47-05:00&ApplicationID=36&UserID=teamjoly@dnb.com&CustomerID=965088422&UserCountryISOAlpha2Code=GB&LanguagePreferenceCode=41"
 	}, {
 		env : "stg",
 		service : "gms_subject",
@@ -729,7 +729,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "gms_events",
-		url : "http://services-ext-qa.dnb.com/V2.0/gmsmonitoring/changeevents/{placeholder}?DUNSNumber=200000024&DNBProductID=GSRL7&ApplicationTransactionID=onboard-1&TransactionTimestamp=2001-09-11T09:30:47-05:00&ApplicationID=36&UserID=teamjoly@dnb.com&CustomerID=965088422&UserCountryISOAlpha2Code=GB&LanguagePreferenceCode=41"
+		url : "https://direct-qa.dnb.com/V2.0/gmsmonitoring/changeevents/{placeholder}?DUNSNumber=200000024&DNBProductID=GSRL7&ApplicationTransactionID=onboard-1&TransactionTimestamp=2001-09-11T09:30:47-05:00&ApplicationID=36&UserID=teamjoly@dnb.com&CustomerID=965088422&UserCountryISOAlpha2Code=GB&LanguagePreferenceCode=41"
 	}, {
 		env : "stg",
 		service : "gms_events",
@@ -741,7 +741,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "gms_alert_report",
-		url : "http://services-ext-qa.dnb.com/V2.0/gmsmonitoring/alertreport?UserID=teamjoly@dnb.com&CustomerID=965088422&DUNSNumber={placeholder}&CountryISOAlpha2Code=GB&ChangeEventID=355746&ApplicationTransactionID=onboard-1&ApplicationID=36&UserCountryISOAlpha2Code=GB&LanguagePreferenceCode=39&SeverityText=Down%20Trend&ChangeEventTypeCode=17893"
+		url : "https://direct-qa.dnb.com/V2.0/gmsmonitoring/alertreport?UserID=teamjoly@dnb.com&CustomerID=965088422&DUNSNumber={placeholder}&CountryISOAlpha2Code=GB&ChangeEventID=355746&ApplicationTransactionID=onboard-1&ApplicationID=36&UserCountryISOAlpha2Code=GB&LanguagePreferenceCode=39&SeverityText=Down%20Trend&ChangeEventTypeCode=17893"
 	}, {
 		env : "stg",
 		service : "gms_alert_report",
@@ -753,7 +753,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "portfolio_assets",
-		url : "http://services-ext-qa.dnb.com/V2/assets?OrderTransactionTypeCode=0&CandidateMaximumQuantity=10&SortBasisText=PortfolioAssetID&SortDirectionText=Ascending&CandidateDisplayStartSequenceNumber=1&ApplicationTransactionID=f9fc47c5-6733-4325-bbbe-157deb0520ba&DNBProductID=ComplianceReport"
+		url : "https://direct-qa.dnb.com/V2/assets?OrderTransactionTypeCode=0&CandidateMaximumQuantity=10&SortBasisText=PortfolioAssetID&SortDirectionText=Ascending&CandidateDisplayStartSequenceNumber=1&ApplicationTransactionID=f9fc47c5-6733-4325-bbbe-157deb0520ba&DNBProductID=ComplianceReport"
 	}, {
 		env : "stg",
 		service : "portfolio_assets",

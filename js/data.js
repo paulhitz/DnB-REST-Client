@@ -230,6 +230,16 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		description : "Initiate a Livingston Screening request. Takes a query term to search against. E.g. 'Smith' or 'ISIS'. The user needs to be configured with a 'SubOrg' number for access to this service.",
 		group : "Miscellaneous"
 	}, {
+		id : "sandbox_match",
+		label : "On-Demand Entity Identification (Match)",
+		description : "See D&B Direct 2.0 documentation for details of the sandbox (test environment). Search parameters are hard-coded.",
+		group : "D&B Direct 2.0 Sandbox - Experimental"
+	}, {
+		id : "sandbox_dcp",
+		label : "Detailed Company Profile (DCP_STD)",
+		description : "See D&B Direct 2.0 documentation for details of the sandbox (test environment). DUNS# is hard-coded.",
+		group : "D&B Direct 2.0 Sandbox - Experimental"
+	}, {
 		id : "date_test",
 		label : "JSONTest.com Date/Time",
 		description : "JSONTest.com is a testing platform for REST services.",
@@ -779,6 +789,30 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		env : "prod",
 		service : "portfolio_assets",
 		url : "https://direct.dnb.com/V2/assets?OrderTransactionTypeCode=0&CandidateMaximumQuantity=10&SortBasisText=PortfolioAssetID&SortDirectionText=Ascending&CandidateDisplayStartSequenceNumber=1&ApplicationTransactionID=f9fc47c5-6733-4325-bbbe-157deb0520ba&DNBProductID=ComplianceReport"
+	}, {
+		env : "qa",
+		service : "sandbox_match",
+		url : "https://direct-qa.dnb.com/V5.0/organizations?CountryISOAlpha2Code=US&SubjectName=GORMAN%20MANUFACTURING&match=true&MatchTypeText=Advanced&TerritoryName=CA"
+	}, {
+		env : "stg",
+		service : "sandbox_match",
+		url : "https://direct-stg.dnb.com/V5.0/organizations?CountryISOAlpha2Code=US&SubjectName=GORMAN%20MANUFACTURING&match=true&MatchTypeText=Advanced&TerritoryName=CA"
+	}, {
+		env : "prod",
+		service : "sandbox_match",
+		url : "https://direct.dnb.com/V5.0/organizations?CountryISOAlpha2Code=US&SubjectName=GORMAN%20MANUFACTURING&match=true&MatchTypeText=Advanced&TerritoryName=CA"
+	}, {
+		env : "qa",
+		service : "sandbox_dcp",
+		url : "https://direct-qa.dnb.com/V6.0/organizations/804735132/products/DCP_STD"
+	}, {
+		env : "stg",
+		service : "sandbox_dcp",
+		url : "https://direct-stg.dnb.com/V6.0/organizations/804735132/products/DCP_STD"
+	}, {
+		env : "prod",
+		service : "sandbox_dcp",
+		url : "https://direct.dnb.com/V6.0/organizations/804735132/products/DCP_STD"
 	}, {
 		env : "",
 		service : "date_test",

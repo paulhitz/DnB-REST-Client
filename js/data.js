@@ -85,6 +85,11 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		description : "This service provides a convenient way to retrieve the list of available assets stored using the Portfolio Service.",
 		group : "Portfolio"
 	}, {
+		id : "archive_portfolio_asset",
+		label : "Archive Portfolio Service (POST)",
+		description : "This service allows the customer to archive a new asset to their portfolio.",
+		group : "Portfolio"
+	}, {
 		id : "ch_director_search",
 		label : "Director Search (v1.0 - Obsolete)",
 		description : "This service uses Companies House data. This particular operation searches for directors/officers. The last name (e.g. 'Smith') should be provided as a parameter.",
@@ -585,6 +590,18 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		env : "prod",
 		service : "list_portfolio",
 		url : "https://direct.dnb.com/rest/PortfolioService/V2/ListPortfolioAsset"
+	}, {
+		env : "qa",
+		service : "archive_portfolio_asset",
+		url : "https://direct-qa.dnb.com/rest/PortfolioService/V2/ArchivePortfolioAsset"
+	}, {
+		env : "stg",
+		service : "archive_portfolio_asset",
+		url : "https://direct-stg.dnb.com/rest/PortfolioService/V2/ArchivePortfolioAsset"
+	}, {
+		env : "prod",
+		service : "archive_portfolio_asset",
+		url : "https://direct.dnb.com/rest/PortfolioService/V2/ArchivePortfolioAsset"
 	}, {
 		env : "qa",
 		service : "ch_director_search",

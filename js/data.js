@@ -25,48 +25,8 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		description : "The Linkage service returns data about a single Global Family Tree (GFT).",
 		group : "Common"
 	}, {
-		id : "firm",
-		label : "Firmographics (DCP_PREM_ONBRD)",
-		description : "Provides basic marketing information such as business name, address, trade style, financials, number of employees etc.",
-		group : "Custom Product Service"
-	}, {
-		id : "dcp_prem",
-		label : "Firmographics (DCP_PREM)",
-		description : "Provides basic marketing information such as business name, address, trade style, financials, number of employees etc. This is configured for DCP_PREM (Detailed Company Profile - Premium) level. Other levels include DCP_STD and DCP_ENH.",
-		group : "Custom Product Service"
-	}, {
-		id : "kyc",
-		label : "Know Your Customer (KYC)",
-		description : "The KYC service provides critical compliance information on businesses and principles in 110 countries to ensure a business is compliant with AML regulations and KYC requirements.",
-		group : "Custom Product Service"
-	}, {
-		id : "gbo",
-		label : "Global Beneficial Ownership (GBO)",
-		description : "The GBO service combines global corporate linkage and individual share ownership. It enables a customer to establish direct and indirect Ultimate Beneficial Ownership at the level that is required for AML/KYC.",
-		group : "Custom Product Service"
-	}, {
-		id : "so",
-		label : "Simple Ownership (SO)",
-		description : "Simplified Global Beneficial Ownership. Lacks share ownership for individuals and other details.",
-		group : "Custom Product Service"
-	}, {
-		id : "single_ownership",
-		label : "Single Ownership (OWNSHP_VRF)",
-		description : "Returns GBO data if available. Otherwise returns SIMPLE OWNERSHIP data.",
-		group : "Custom Product Service"
-	}, {
-		id : "cmp_rpt",
-		label : "Compliance Verification Report (CMP_VRF_RPT)",
-		description : "The Compliance Verification Service provides customers with a set of data to support entity verification needs as part of their compliance process. The Compliance Verification Report (CMP_VRF_RPT) product provides a detailed view of Firmographics, Principals, Linkage, Stock Listing and Regulator information of the business.",
-		group : "Custom Product Service"
-	}, {
-		id : "cmp_id",
-		label : "Compliance Verification Identity (CMP_VRF_ID)",
-		description : "The Compliance Verification Service provides customers with a set of data to support entity verification needs as part of their compliance process. The Compliance Verification Identity (CMP_VRF_ID) product provides a lightweight view of Firmographics, Principals, Linkage and Stock Listing information of the business.",
-		group : "Custom Product Service"
-	}, {
 		id : "match",
-		label : "Match (REST version)",
+		label : "Match",
 		description : "Searches for companies based on DUNS#. The Onboard application does NOT use the REST version of Match. It still uses the SOAP version.",
 		group : "Search"
 	}, {
@@ -74,6 +34,66 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		label : "Global Name Search / Entity List Service (v4.0)",
 		description : "Returns a set of companies based on DUNS# or keyword, along with basic identifying data for each company.",
 		group : "Search"
+	}, {
+		id : "comp_vrf_rpt",
+		label : "Compliance Verification Report (CMP_VRF_RPT)",
+		description : "The Compliance Verification Service provides customers with a set of data to support entity verification needs as part of their compliance process. The Compliance Verification Report (CMP_VRF_RPT) product provides a detailed view of Firmographics, Principals, Linkage, Stock Listing and Regulator information of the business.",
+		group : "Compliance Verification (v1.0)"
+	}, {
+		id : "comp_vrf_id",
+		label : "Compliance Verification Identity (CMP_VRF_ID)",
+		description : "The Compliance Verification Service provides customers with a set of data to support entity verification needs as part of their compliance process. The Compliance Verification Identity (CMP_VRF_ID) product provides a lightweight view of Firmographics, Principals, Linkage and Stock Listing information of the business.",
+		group : "Compliance Verification (v1.0)"
+	}, {
+		id : "comp_gbo",
+		label : "Global Beneficial Ownership (GBO)",
+		description : "The GBO service combines global corporate linkage and individual share ownership. It enables a customer to establish direct and indirect Ultimate Beneficial Ownership at the level that is required for AML/KYC.",
+		group : "Compliance Verification (v1.0)"
+	}, {
+		id : "comp_so",
+		label : "Simple Ownership (SMPL_OWNSHP)",
+		description : "Simplified Global Beneficial Ownership. Lacks share ownership for individuals and other details.",
+		group : "Compliance Verification (v1.0)"
+	}, {
+		id : "comp_single_ownership",
+		label : "Single Ownership (OWNSHP_VRF)",
+		description : "Returns GBO data if available. Otherwise returns SIMPLE OWNERSHIP data.",
+		group : "Compliance Verification (v1.0)"
+	}, {
+		id : "comp_kyc",
+		label : "Know Your Customer (KYC)",
+		description : "The KYC service provides critical compliance information on businesses and principles in 110 countries to ensure a business is compliant with AML regulations and KYC requirements.",
+		group : "Compliance Verification (v1.0)"
+	}, {
+		id : "dcp_prem",
+		label : "Firmographics (DCP_PREM)",
+		description : "Provides basic marketing information such as business name, address, trade style, financials, number of employees etc. This is configured for DCP_PREM (Detailed Company Profile - Premium) level. Other levels include DCP_STD and DCP_ENH.",
+		group : "Custom Product"
+	}, {
+		id : "kyc",
+		label : "Know Your Customer (KYC)",
+		description : "The KYC service provides critical compliance information on businesses and principles in 110 countries to ensure a business is compliant with AML regulations and KYC requirements.",
+		group : "Custom Product"
+	}, {
+		id : "gbo",
+		label : "Global Beneficial Ownership (GBO)",
+		description : "The GBO service combines global corporate linkage and individual share ownership. It enables a customer to establish direct and indirect Ultimate Beneficial Ownership at the level that is required for AML/KYC.",
+		group : "Custom Product"
+	}, {
+		id : "so",
+		label : "Simple Ownership (SMPL_OWNSHP)",
+		description : "Simplified Global Beneficial Ownership. Lacks share ownership for individuals and other details.",
+		group : "Custom Product"
+	}, {
+		id : "cmp_rpt",
+		label : "Compliance Verification Report (CMP_VRF_RPT)",
+		description : "The Compliance Verification Service provides customers with a set of data to support entity verification needs as part of their compliance process. The Compliance Verification Report (CMP_VRF_RPT) product provides a detailed view of Firmographics, Principals, Linkage, Stock Listing and Regulator information of the business.",
+		group : "Custom Product"
+	}, {
+		id : "cmp_id",
+		label : "Compliance Verification Identity (CMP_VRF_ID)",
+		description : "The Compliance Verification Service provides customers with a set of data to support entity verification needs as part of their compliance process. The Compliance Verification Identity (CMP_VRF_ID) product provides a lightweight view of Firmographics, Principals, Linkage and Stock Listing information of the business.",
+		group : "Custom Product"
 	}, {
 		id : "portfolio_assets",
 		label : "List Portfolio Asset (GET)",
@@ -148,37 +168,37 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		id : "rdc_search",
 		label : "RDC Search",
 		description : "This service allows organizations to identify banned or suspect entities (suppliers, partners, customers, etc.) and individuals, strengthen fraud protection, ensure regulatory compliance and manage supply and distribution risk.",
-		group : "ComplianceCheck Service (v1.0)"
+		group : "ComplianceCheck (v1.0)"
 	}, {
 		id : "rdc_entity",
 		label : "RDC Entity Information (Silvio Berlusconi)",
 		description : "Request more information regarding the specified entity. This request is hard-coded with the entity ID of 'Silvio Berlusconi'.",
-		group : "ComplianceCheck Service (v1.0)"
+		group : "ComplianceCheck (v1.0)"
 	}, {
 		id : "rdc_entity_pdf",
 		label : "RDC Entity Information - PDF (Silvio Berlusconi)",
 		description : "Request a PDF with more information regarding the specified entity. This request is hard-coded with the entity ID of 'Silvio Berlusconi'.",
-		group : "ComplianceCheck Service (v1.0)"
+		group : "ComplianceCheck (v1.0)"
 	}, {
 		id : "rdc_alerts",
 		label : "Monitoring - Alerts",
 		description : "Allows a customer to retrieve a list of recent alerts triggered by active registrations across multiple subjects.",
-		group : "ComplianceCheck Service (v1.0)"
+		group : "ComplianceCheck (v1.0)"
 	}, {
 		id : "rdc_alerts_batch",
 		label : "Monitoring - Alerts by Batch ID",
 		description : "Allows a customer to retrieve a list of recent alerts filtered by Batch/Subject ID.",
-		group : "ComplianceCheck Service (v1.0)"
+		group : "ComplianceCheck (v1.0)"
 	}, {
 		id : "rdc_subject_alerts",
 		label : "Monitoring - Subject Alerts (GET / PUT)",
 		description : "Allows a customer to retrieve ('GET') the results from a successful subject registration. A 'PUT' request allows cancellation of a registration. A batch ID should be provided as a parameter.",
-		group : "ComplianceCheck Service (v1.0)"
+		group : "ComplianceCheck (v1.0)"
 	}, {
 		id : "rdc_register",
 		label : "Monitoring - Register Entity (POST)",
 		description : "Allows a customer to specify a subject (organizations and/or individuals) to be submitted for compliance screening using the ComplianceCheck service. A batch ID is returned.",
-		group : "ComplianceCheck Service (v1.0)"
+		group : "ComplianceCheck (v1.0)"
 	}, {
 		id : "gms_reg",
 		label : "Registration (GET/POST/PUT)",
@@ -376,16 +396,76 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		url : "https://direct.dnb.com/rest/LinkageService/V2/OrderProduct?DUNSNumber={placeholder}&CountryISOAlpha2Code=GB&DNBProductID=LNK_FF_MNRT"
 	}, {
 		env : "qa",
-		service : "firm",
-		url : "https://direct-qa.dnb.com/V2/organizations/{placeholder}/products/DCP_PREM_ONBRD?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		service : "comp_gbo",
+		url : "https://direct-qa.dnb.com/V1.0/organizations/{placeholder}/products/GBO?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
-		service : "firm",
-		url : "https://direct-stg.dnb.com/V2.0/organizations/{placeholder}/products/DCP_PREM_ONBRD?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		service : "comp_gbo",
+		url : "https://direct-stg.dnb.com/V1.0/organizations/{placeholder}/products/GBO?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
-		service : "firm",
-		url : "https://direct.dnb.com/V2.0/organizations/{placeholder}/products/DCP_PREM_ONBRD?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		service : "comp_gbo",
+		url : "https://direct.dnb.com/V1.0/organizations/{placeholder}/products/GBO?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "qa",
+		service : "comp_so",
+		url : "https://direct-qa.dnb.com/V1.0/organizations/{placeholder}/products/SMPL_OWNSHP?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "stg",
+		service : "comp_so",
+		url : "https://direct-stg.dnb.com/V1.0/organizations/{placeholder}/products/SMPL_OWNSHP?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "prod",
+		service : "comp_so",
+		url : "https://direct.dnb.com/V1.0/organizations/{placeholder}/products/SMPL_OWNSHP?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "qa",
+		service : "comp_single_ownership",
+		url : "https://direct-qa.dnb.com/V1.0/organizations/{placeholder}/products/OWNSHP_VRF?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "stg",
+		service : "comp_single_ownership",
+		url : "https://direct-stg.dnb.com/V1.0/organizations/{placeholder}/products/OWNSHP_VRF?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "prod",
+		service : "comp_single_ownership",
+		url : "https://direct.dnb.com/V1.0/organizations/{placeholder}/products/OWNSHP_VRF?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "qa",
+		service : "comp_vrf_rpt",
+		url : "https://direct-qa.dnb.com/V1.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "stg",
+		service : "comp_vrf_rpt",
+		url : "https://direct-stg.dnb.com/V1.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "prod",
+		service : "comp_vrf_rpt",
+		url : "https://direct.dnb.com/V1.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "qa",
+		service : "comp_vrf_id",
+		url : "https://direct-qa.dnb.com/V1.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "stg",
+		service : "comp_vrf_id",
+		url : "https://direct-stg.dnb.com/V1.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "prod",
+		service : "comp_vrf_id",
+		url : "https://direct.dnb.com/V1.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "qa",
+		service : "comp_kyc",
+		url : "https://direct-qa.dnb.com/V1.0/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "stg",
+		service : "comp_kyc",
+		url : "https://direct-stg.dnb.com/V1.0/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "prod",
+		service : "comp_kyc",
+		url : "https://direct.dnb.com/V1.0/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "dcp_prem",
@@ -422,18 +502,6 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		env : "prod",
 		service : "so",
 		url : "https://direct.dnb.com/V2/organizations/{placeholder}/products/SMPL_OWNSHP?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
-	}, {
-		env : "qa",
-		service : "single_ownership",
-		url : "https://direct-qa.dnb.com/V1.0/organizations/{placeholder}/products/OWNSHP_VRF?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
-	}, {
-		env : "stg",
-		service : "single_ownership",
-		url : "https://direct-stg.dnb.com/V1.0/organizations/{placeholder}/products/OWNSHP_VRF?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
-	}, {
-		env : "prod",
-		service : "single_ownership",
-		url : "https://direct.dnb.com/V1.0/organizations/{placeholder}/products/OWNSHP_VRF?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "cmp_rpt",

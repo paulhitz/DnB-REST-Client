@@ -95,6 +95,16 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		description : "The Compliance Verification Service provides customers with a set of data to support entity verification needs as part of their compliance process. The Compliance Verification Identity (CMP_VRF_ID) product provides a lightweight view of Firmographics, Principals, Linkage and Stock Listing information of the business.",
 		group : "Custom Product"
 	}, {
+		id : "cmp_bol",
+		label : "Compliance Beneficial Ownership List (CMP_BOL)",
+		description : "The 'Get List' operation focuses on the entities (corporate and natural persons) and their relationship back to the target DUNS with particular emphasis on identifying UBOs (Ultimate Beneficial Owners) and CBOs (Corporate Beneficial Owners).",
+		group : "Ultimate Beneficial Ownership (UBO)"
+	}, {
+		id : "cmp_bos",
+		label : "Compliance Beneficial Ownership Structure (CMP_BOS)",
+		description : "The 'Get Full Structure' operation allows customers to understand all entities (corporate and natural persons) along with all of their individual relationships.",
+		group : "Ultimate Beneficial Ownership (UBO)"
+	}, {
 		id : "portfolio_assets",
 		label : "List Portfolio Asset (GET)",
 		description : "Retrieve a list of assets stored by the Portfolio Service based on the Application Transaction ID and the Product ID.",
@@ -526,6 +536,30 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		env : "prod",
 		service : "cmp_id",
 		url : "https://direct.dnb.com/V4.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "qa",
+		service : "cmp_bol",
+		url : "https://direct-qa.dnb.com/V1.1/organizations/{placeholder}/products/CMP_BOL?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "stg",
+		service : "cmp_bol",
+		url : "https://direct-stg.dnb.com/V1.1/organizations/{placeholder}/products/CMP_BOL?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "prod",
+		service : "cmp_bol",
+		url : "https://direct.dnb.com/V1.1/organizations/{placeholder}/products/CMP_BOL?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "qa",
+		service : "cmp_bos",
+		url : "https://direct-qa.dnb.com/V1.1/organizations/{placeholder}/products/CMP_BOS?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "stg",
+		service : "cmp_bos",
+		url : "https://direct-stg.dnb.com/V1.1/organizations/{placeholder}/products/CMP_BOS?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+	}, {
+		env : "prod",
+		service : "cmp_bos",
+		url : "https://direct.dnb.com/V1.1/organizations/{placeholder}/products/CMP_BOS?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "kyc",

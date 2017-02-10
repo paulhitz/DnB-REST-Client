@@ -74,6 +74,9 @@ clientApp.service('clientAppHelper', function($http, utils, ProgressbarService, 
 			if (advancedSettings.credentials.appId) {
 				requestConfig.headers['ApplicationId'] = advancedSettings.credentials.appId;
 			}
+			if (advancedSettings.credentials.actualUserId) {
+				requestConfig.headers['ActualUserId'] = advancedSettings.credentials.actualUserId;
+			}
 		}
 
 		//Determine the request method to use (GET/POST/PUT/DELETE/HEAD/PATCH).
@@ -232,6 +235,7 @@ clientApp.service('clientAppHelper', function($http, utils, ProgressbarService, 
 		if (typeof initialCredentials === 'undefined'
 				|| initialCredentials.appId !== currentCredentials.appId
 				|| initialCredentials.userId !== currentCredentials.userId
+				|| initialCredentials.actualUserId !== currentCredentials.actualUserId
 				|| initialCredentials.password !== currentCredentials.password) {
 			//Persist the updated credentials (include some other relevant data).
 			currentCredentials.date = Date();

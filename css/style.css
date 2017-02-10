@@ -121,6 +121,14 @@ div.json-content pre {
   text-align: right;
 }
 
+.btn-group {
+  width: 100%;
+}
+
+.btn-group button {
+  width: 50%;
+}
+
 .tooltip-inner {
   text-align: justify;
   width: 100px;

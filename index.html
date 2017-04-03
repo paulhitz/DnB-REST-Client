@@ -2,9 +2,9 @@
 <html lang="en" data-ng-app="clientApp" data-ng-csp>
 <head>
 	<meta charset="utf-8">
-	<title>D&amp;B Services REST Client</title>
+	<title>D&amp;B REST Client</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="This tool can be used to test various REST Services. A large number of D&amp;B Services are already configured and new ones can be easily added.">
+	<meta name="description" content="This tool can be used to test various D&amp;B REST APIs. A large number of D&amp;B Direct 2.0 services are already configured and new ones can be easily added.">
 	<meta name="author" content="Paul Hitz">
 	<link href="lib/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="lib/components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
@@ -22,7 +22,7 @@
 			<span class="icon-bar"></span>
 		</button>
 		<div class="navbar-brand">
-			<img src="img/new_dnb_logo.png" alt="Logo"> <span class="hidden-xs">D&amp;B Services REST Client <sup data-ng-cloak>{{version}}</sup></span>
+			<img src="img/new_dnb_logo.png" alt="Logo"> <span class="hidden-xs">D&amp;B Direct REST Client <sup data-ng-cloak>{{version}}</sup></span>
 		</div>
 		<nav class="collapse navbar-collapse" id="links">
 			<ul class="nav navbar-nav navbar-right" data-ng-controller="EventsCtrl">
@@ -37,7 +37,7 @@
 	<data-ng-include src="'partials/main.html'" data-ng-hide="displayHistory"></data-ng-include>
 
 	<footer class="row navbar-default container">
-		<p class="text-muted pull-left">Developed by the Dublin <a href="http://onboard.dnb.com/" target="_blank">Onboard</a> Team.</p>
+		<p class="text-muted pull-left">Developed for D&amp;B Direct 2.0 by the Dublin <a href="http://onboard.dnb.com/" target="_blank">Onboard</a> Team.</p>
 		<p class="pull-right hidden-xs">
 			<a href="http://yet-another-rest-client.com/" target="_blank" class="text-danger"><strong>Try YARC!</strong></a> |
 			<a href="mailto:hitzp@dnb.com?subject=Feedback">Feedback</a> |

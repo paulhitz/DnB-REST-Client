@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
-  "name": "D&B Services REST Client",
-  "version": "1.3.8",
+  "name": "D&B REST Client",
+  "version": "1.3.9",
 
-  "description": "This tool can be used to test various REST Services.",
-  "short_name": "D&B Services",
+  "description": "This tool can be used to test various REST APIs available on D&B Direct 2.0.",
+  "short_name": "D&B APIs",
   "author": "Paul Hitz",
 
   "icons": { "16": "img/logo_16x16.png",

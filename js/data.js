@@ -38,32 +38,32 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		id : "comp_vrf_rpt",
 		label : "Compliance Verification Report (CMP_VRF_RPT)",
 		description : "The Compliance Verification Service provides customers with a set of data to support entity verification needs as part of their compliance process. The Compliance Verification Report (CMP_VRF_RPT) product provides a detailed view of Firmographics, Principals, Linkage, Stock Listing and Regulator information of the business.",
-		group : "Compliance Verification (v1.0)"
+		group : "Compliance Verification (v1.1)"
 	}, {
 		id : "comp_vrf_id",
 		label : "Compliance Verification Identity (CMP_VRF_ID)",
 		description : "The Compliance Verification Service provides customers with a set of data to support entity verification needs as part of their compliance process. The Compliance Verification Identity (CMP_VRF_ID) product provides a lightweight view of Firmographics, Principals, Linkage and Stock Listing information of the business.",
-		group : "Compliance Verification (v1.0)"
+		group : "Compliance Verification (v1.1)"
 	}, {
 		id : "comp_gbo",
 		label : "Global Beneficial Ownership (GBO)",
 		description : "The GBO service combines global corporate linkage and individual share ownership. It enables a customer to establish direct and indirect Ultimate Beneficial Ownership at the level that is required for AML/KYC.",
-		group : "Compliance Verification (v1.0)"
+		group : "Compliance Verification (v1.1)"
 	}, {
 		id : "comp_so",
 		label : "Simple Ownership (SMPL_OWNSHP)",
 		description : "Simplified Global Beneficial Ownership. Lacks share ownership for individuals and other details.",
-		group : "Compliance Verification (v1.0)"
+		group : "Compliance Verification (v1.1)"
 	}, {
 		id : "comp_single_ownership",
 		label : "Single Ownership (OWNSHP_VRF)",
 		description : "Returns GBO data if available. Otherwise returns SIMPLE OWNERSHIP data.",
-		group : "Compliance Verification (v1.0)"
+		group : "Compliance Verification (v1.1)"
 	}, {
 		id : "comp_kyc",
 		label : "Know Your Customer (KYC)",
 		description : "The KYC service provides critical compliance information on businesses and principles in 110 countries to ensure a business is compliant with AML regulations and KYC requirements.",
-		group : "Compliance Verification (v1.0)"
+		group : "Compliance Verification (v1.1)"
 	}, {
 		id : "dcp_prem",
 		label : "Firmographics (DCP_PREM)",
@@ -261,7 +261,7 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 		group : "Miscellaneous"
 	}, {
 		id : "patriot_act",
-		label : "Livingston Sanctions Watchlist Screening - Patriot Act (v2.0)",
+		label : "Livingston Sanctions Watchlist Screening - Patriot Act (v4.0)",
 		description : "Initiate a Livingston Screening request. Takes a query term to search against. E.g. 'Smith' or 'ISIS'. The user needs to be configured with a 'SubOrg' number for access to this service.",
 		group : "Miscellaneous"
 	}, {
@@ -407,75 +407,75 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "comp_gbo",
-		url : "https://direct-qa.dnb.com/V1.0/organizations/{placeholder}/products/GBO?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-qa.dnb.com/V1.1/organizations/{placeholder}/products/GBO?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "comp_gbo",
-		url : "https://direct-stg.dnb.com/V1.0/organizations/{placeholder}/products/GBO?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-stg.dnb.com/V1.1/organizations/{placeholder}/products/GBO?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "comp_gbo",
-		url : "https://direct.dnb.com/V1.0/organizations/{placeholder}/products/GBO?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct.dnb.com/V1.1/organizations/{placeholder}/products/GBO?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "comp_so",
-		url : "https://direct-qa.dnb.com/V1.0/organizations/{placeholder}/products/SMPL_OWNSHP?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-qa.dnb.com/V1.1/organizations/{placeholder}/products/SMPL_OWNSHP?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "comp_so",
-		url : "https://direct-stg.dnb.com/V1.0/organizations/{placeholder}/products/SMPL_OWNSHP?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-stg.dnb.com/V1.1/organizations/{placeholder}/products/SMPL_OWNSHP?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "comp_so",
-		url : "https://direct.dnb.com/V1.0/organizations/{placeholder}/products/SMPL_OWNSHP?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct.dnb.com/V1.1/organizations/{placeholder}/products/SMPL_OWNSHP?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "comp_single_ownership",
-		url : "https://direct-qa.dnb.com/V1.0/organizations/{placeholder}/products/OWNSHP_VRF?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-qa.dnb.com/V1.1/organizations/{placeholder}/products/OWNSHP_VRF?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "comp_single_ownership",
-		url : "https://direct-stg.dnb.com/V1.0/organizations/{placeholder}/products/OWNSHP_VRF?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-stg.dnb.com/V1.1/organizations/{placeholder}/products/OWNSHP_VRF?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "comp_single_ownership",
-		url : "https://direct.dnb.com/V1.0/organizations/{placeholder}/products/OWNSHP_VRF?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct.dnb.com/V1.1/organizations/{placeholder}/products/OWNSHP_VRF?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "comp_vrf_rpt",
-		url : "https://direct-qa.dnb.com/V1.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-qa.dnb.com/V1.1/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "comp_vrf_rpt",
-		url : "https://direct-stg.dnb.com/V1.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-stg.dnb.com/V1.1/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "comp_vrf_rpt",
-		url : "https://direct.dnb.com/V1.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct.dnb.com/V1.1/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "comp_vrf_id",
-		url : "https://direct-qa.dnb.com/V1.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-qa.dnb.com/V1.1/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "comp_vrf_id",
-		url : "https://direct-stg.dnb.com/V1.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-stg.dnb.com/V1.1/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "comp_vrf_id",
-		url : "https://direct.dnb.com/V1.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct.dnb.com/V1.1/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "comp_kyc",
-		url : "https://direct-qa.dnb.com/V1.0/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-qa.dnb.com/V1.1/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "comp_kyc",
-		url : "https://direct-stg.dnb.com/V1.0/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-stg.dnb.com/V1.1/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "comp_kyc",
-		url : "https://direct.dnb.com/V1.0/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct.dnb.com/V1.1/organizations/{placeholder}/products/KYC?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "dcp_prem",
@@ -539,27 +539,27 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "cmp_bol",
-		url : "https://direct-qa.dnb.com/V1.1/organizations/{placeholder}/products/CMP_BOL?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-qa.dnb.com/V1.1/organizations/{placeholder}/products/CMP_BOL?ArchiveProductOptOutIndicator=true&TradeUpIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "cmp_bol",
-		url : "https://direct-stg.dnb.com/V1.1/organizations/{placeholder}/products/CMP_BOL?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-stg.dnb.com/V1.1/organizations/{placeholder}/products/CMP_BOL?ArchiveProductOptOutIndicator=true&TradeUpIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "cmp_bol",
-		url : "https://direct.dnb.com/V1.1/organizations/{placeholder}/products/CMP_BOL?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct.dnb.com/V1.1/organizations/{placeholder}/products/CMP_BOL?ArchiveProductOptOutIndicator=true&TradeUpIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "cmp_bos",
-		url : "https://direct-qa.dnb.com/V1.1/organizations/{placeholder}/products/CMP_BOS?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-qa.dnb.com/V1.1/organizations/{placeholder}/products/CMP_BOS?ArchiveProductOptOutIndicator=true&TradeUpIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "cmp_bos",
-		url : "https://direct-stg.dnb.com/V1.1/organizations/{placeholder}/products/CMP_BOS?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-stg.dnb.com/V1.1/organizations/{placeholder}/products/CMP_BOS?ArchiveProductOptOutIndicator=true&TradeUpIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "cmp_bos",
-		url : "https://direct.dnb.com/V1.1/organizations/{placeholder}/products/CMP_BOS?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct.dnb.com/V1.1/organizations/{placeholder}/products/CMP_BOS?ArchiveProductOptOutIndicator=true&TradeUpIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "kyc",
@@ -779,15 +779,15 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "patriot_act",
-		url : "https://direct-qa.dnb.com/v2.0/sanctionswatchlistscreening/subjects/{placeholder}/SANCT_GOVT_WLST_SCRN"
+		url : "https://direct-qa.dnb.com/v4.0/sanctionswatchlistscreening/subjects/{placeholder}/SANCT_GOVT_WLST_SCRN"
 	}, {
 		env : "stg",
 		service : "patriot_act",
-		url : "https://direct-stg.dnb.com/v2.0/sanctionswatchlistscreening/subjects/{placeholder}/SANCT_GOVT_WLST_SCRN"
+		url : "https://direct-stg.dnb.com/v4.0/sanctionswatchlistscreening/subjects/{placeholder}/SANCT_GOVT_WLST_SCRN"
 	}, {
 		env : "prod",
 		service : "patriot_act",
-		url : "https://direct.dnb.com/v2.0/sanctionswatchlistscreening/subjects/{placeholder}/SANCT_GOVT_WLST_SCRN"
+		url : "https://direct.dnb.com/v4.0/sanctionswatchlistscreening/subjects/{placeholder}/SANCT_GOVT_WLST_SCRN"
 	}, {
 		env : "qa",
 		service : "gms_reg",

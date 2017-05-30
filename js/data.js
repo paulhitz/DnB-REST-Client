@@ -443,27 +443,27 @@ angular.module('clientApp').constant('SERVICES_CONFIG', {
 	}, {
 		env : "qa",
 		service : "comp_vrf_rpt",
-		url : "https://direct-qa.dnb.com/V1.1/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-qa.dnb.com/V5.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "comp_vrf_rpt",
-		url : "https://direct-stg.dnb.com/V1.1/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-stg.dnb.com/V5.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "comp_vrf_rpt",
-		url : "https://direct.dnb.com/V1.1/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct.dnb.com/V5.0/organizations/{placeholder}/products/CMP_VRF_RPT?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "comp_vrf_id",
-		url : "https://direct-qa.dnb.com/V1.1/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-qa.dnb.com/V5.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "stg",
 		service : "comp_vrf_id",
-		url : "https://direct-stg.dnb.com/V1.1/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct-stg.dnb.com/V5.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "prod",
 		service : "comp_vrf_id",
-		url : "https://direct.dnb.com/V1.1/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
+		url : "https://direct.dnb.com/V5.0/organizations/{placeholder}/products/CMP_VRF_ID?ArchiveProductOptOutIndicator=true&orderReasonCode=6333"
 	}, {
 		env : "qa",
 		service : "comp_kyc",
